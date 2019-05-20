@@ -32,7 +32,7 @@ As a User
 So only I can access my account
 I want to provide a personal password
 
-As a user
+As a User
 So that I can access the content  in Acebook
 I want to able to be authenticated by logging in to my account;
 

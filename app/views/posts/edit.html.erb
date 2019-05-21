@@ -1,0 +1,6 @@
+<%= form_for @post do |f| %>
+  <%= f.text_field :message %>
+
+  <%= f.submit "Save changes",
+  data: { confirm: "Confirm changes" } %>
+<% end %>

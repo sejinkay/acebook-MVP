@@ -1,17 +1,21 @@
-<h1 align = "right"><%= link_to new_post_path do %>
-  New post
-<% end %>/<%= link_to "Sign-Out", root_path%></h1>
+<header>
+  <nav>
+    <h1 align = "right"><%= link_to new_post_path do %>
+      New post
+    <% end %>/<%= link_to "Sign-Out", root_path%></h1>
+    </nav>
+  </header>
 
 <br>
 <% @posts.reverse.each do |post| %><div style="background-color: rgba(255, 255, 255, 0.4); padding: 10px; margin: 20px; width: 450px;">
   <h2><%= post.message %></h2>
-  <h4>Created at: <%= time_ago_in_words post.created_at.strftime('%R %d-%m-%Y') %> ago</h4>
-  <p><% if post.created_at != post.updated_at %>
-    <h4>Updated at: <%= time_ago_in_words  post.updated_at.strftime('%R %d-%m-%Y') %> ago</h4>
+  <h4>Created at: <%= time_ago_in_words post.created_at%> ago
+  <% if post.created_at != post.updated_at %>/
+    Updated at: <%= time_ago_in_words  post.updated_at %> ago
     <% end %>
-  <%= link_to "delete", post, method: :delete,
+  <p><%= link_to "delete", post, method: :delete,
     data: { confirm: "You sure?" } %>&nbsp;&nbsp;
-    <%= link_to "edit", edit_post_path(post) %></div>
+    <%= link_to "edit", edit_post_path(post) %></h4></div>
 <% end %>
 <br/>
 <br/>

@@ -1,7 +1,7 @@
-<br>
+  <h3 align ="right"><%= link_to "Go back to main", posts_path%></h3><br>
 <%= form_for @post do |form| %>
-  <h4><%= form.label :message %>&nbsp;
-  <%= form.text_field :message %>
-
+  <h4><%= form.label :message %><br>
+  <%= form.text_field :message, :size => 30 %>
+<br><br>
   <%= form.submit "Submit" %></h4>
 <% end %>

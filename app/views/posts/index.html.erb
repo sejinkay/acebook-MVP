@@ -10,9 +10,9 @@
 <br><br>
 <% @posts.reverse.each do |post| %><div style="background-color: rgba(255, 255, 255, 0.4); border-radius: 10px; padding: 10px; margin: 20px; width: 450px;">
   <h2><div class = "message"><%= post.message %></div></h2>
-  <h4 align = "right">Created at: <%= time_ago_in_words post.created_at%> ago
+  <h4 align = "right">Created @ <%= time_ago_in_words post.created_at%> ago
   <% if post.created_at != post.updated_at %><mark>/</mark>
-    Updated at: <%= time_ago_in_words  post.updated_at %> ago
+    Updated @ <%= time_ago_in_words  post.updated_at %> ago
     <% end %>
   <p><%= link_to "delete", post, method: :delete,
     data: { confirm: "You sure?" } %>&nbsp;&nbsp;

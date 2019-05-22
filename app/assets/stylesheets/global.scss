@@ -23,7 +23,7 @@ body {
   background-image: linear-gradient(to top, #5ee7df 0%, #b490ca 100%);
   background-repeat: no-repeat;
   background-attachment: fixed;
-  color: var(--primary-blue);
+  color: white;
 
 }
 
@@ -73,6 +73,7 @@ a:hover {
   background-color: pink;
   color: white;
   padding: 5px 10px;
+  margin-left: 20px;
   border-radius: 5px;
   border: 0px solid #34c1e5;
 }
@@ -89,6 +90,7 @@ a:hover {
 
 .textbox-style {
   padding: 5px;
+  margin-left: 20px;
   width: 200px;
   border-radius: 10px;
   border: none;
@@ -96,6 +98,7 @@ a:hover {
 
 .messagebox-style {
   padding: 10px;
+  margin-left: 20px;
   height: 100px;
   width: 350px;
   border-radius: 10px;

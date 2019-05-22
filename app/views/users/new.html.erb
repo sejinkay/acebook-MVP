@@ -2,7 +2,8 @@
 </center>
 
 <%= form_for(@user) do |form| %><div style="background-color: rgba(255, 255, 255, 0.4); border-radius: 10px; padding: 10px; margin: 20px; width: 450px;">
-<h3>Sign-Up! or...<%= link_to "Sign-In", posts_path%></h3><br>
+<h3>&nbsp;&nbsp;&nbsp;&nbsp;
+  Sign-Up! or...&nbsp;<%= link_to "Sign-In", posts_path%></h3><br>
  <%= form.text_field :name, class: 'textbox-style', :required => true, :placeholder => 'Type your name' %>
 <br>
 <br>
@@ -12,5 +13,5 @@
  <%= form.password_field :password, class: 'textbox-style', :placeholder => 'Type your password', :required => true %>
 <br>
 <br>
- <%= form.submit "Submit", class: 'button' %></div>
+ <%= form.submit "Submit", class: 'button' %><br>&nbsp;</div>
 <% end %>

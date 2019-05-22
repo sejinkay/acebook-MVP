@@ -1,9 +1,10 @@
 <header>
-  <nav>
-    <h3 align = "right"><%= link_to new_post_path do %>
+  <nav><div class="navbar">
+    <h3 align = "right"><%= link_to "Timeline", posts_path%><mark>/</mark>
+      <%= link_to new_post_path do %>
       New post
     <% end %><mark>/</mark><%= link_to "Sign-Out", root_path%></h3>
-    </nav>
+    </div></nav>
   </header>
 
 <br>

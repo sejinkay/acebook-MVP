@@ -102,6 +102,13 @@ mark {
   background-color: white;
 }
 
+.navbar {
+  // overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 95%;
+}
+
 // input[type=text]  {
 //   height: 100px;
 // }

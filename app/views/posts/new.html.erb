@@ -1,4 +1,12 @@
-  <h3 align ="right"><%= link_to "Go back to main", posts_path%></h3><br>
+<header>
+  <nav><div class="navbar">
+    <h3 align = "right"><%= link_to "Timeline", posts_path%><mark>/</mark>
+      <%= link_to new_post_path do %>
+      New post
+    <% end %><mark>/</mark><%= link_to "Sign-Out", root_path%></h3>
+    </div></nav>
+  </header>
+  
 <%= form_for @post do |form| %>
   <h4><%= form.text_field :message, class: 'messagebox-style', :placeholder => 'Write anything!', :size => 30 %>
 <br><br>

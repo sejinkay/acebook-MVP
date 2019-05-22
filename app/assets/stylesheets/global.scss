@@ -48,7 +48,7 @@ h3 {
 }
 
 h4 {
-  color: var(--primary-blue);
+  color: #547282;
   font-size: 12px;
 }
 
@@ -59,10 +59,14 @@ h4 {
 
 a {
   color: var(--secondary-orange);
+  text-decoration: none;
 }
 
 a:hover {
-  background-color: pink;
+  color: white;
+  // background-color: pink;
+  font-style: italic;
+  text-decoration: none;
 }
 
 .button {

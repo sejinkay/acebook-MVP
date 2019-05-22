@@ -1,3 +1,5 @@
+<h1>Acebook</h1>
+<h2>Create an account</h2>
 
 <%= form_for(@user) do |form| %>
   <%= form.label :name %>
@@ -12,5 +14,11 @@
   <%= form.text_field :password %>
 </br>
 </br>
-  <%= form.submit "Submit" %>
+  <%= form.submit "Sign Up" %>
+<% end %>
+</br>
+</br>
+</br>
+<%= link_to users_path do %>
+  Sign In
 <% end %>

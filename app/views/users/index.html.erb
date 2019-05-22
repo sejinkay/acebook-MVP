@@ -1,3 +1,19 @@
+<h2>Log In</h2>
+<%= form_for(User.new) do |form| %>
+  <%= form.label :email %>
+  <%= form.text_field :email %>
+</br>
+</br>
+  <%= form.label :password %>
+  <%= form.text_field :password %>
+</br>
+</br>
+  <%= link_to posts_path do %>
+    Confirm
+  <% end %>
+<% end %>
+</br>
+</br>
 <%= link_to new_user_path do %>
-  Sign Up
+  Back to Sign Up
 <% end %>

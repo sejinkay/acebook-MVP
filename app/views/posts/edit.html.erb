@@ -2,6 +2,6 @@
 <%= form_for @post do |f| %>
   <h4><%= f.text_field :message, class: 'messagebox-style' %>
 <br><br>
-  <%= f.submit "Save changes",
+  <%= f.submit "Save changes", class: 'button',
   data: { confirm: "Confirm changes" } %></h4>
 <% end %>

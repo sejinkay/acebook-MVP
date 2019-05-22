@@ -1,7 +1,8 @@
+<br>
 <%= form_for @post do |f| %>
-  <%= f.label :message %>
+  <h4><%= f.label :message %>
   <%= f.text_field :message %>
 
   <%= f.submit "Save changes",
-  data: { confirm: "Confirm changes" } %>
+  data: { confirm: "Confirm changes" } %></h4>
 <% end %>

@@ -1,16 +1,16 @@
 <header>
   <nav>
-    <h1 align = "right"><%= link_to new_post_path do %>
+    <h3 align = "right"><%= link_to new_post_path do %>
       New post
-    <% end %>/<%= link_to "Sign-Out", root_path%></h1>
+    <% end %><mark>/</mark><%= link_to "Sign-Out", root_path%></h3>
     </nav>
   </header>
 
 <br>
 <% @posts.reverse.each do |post| %><div style="background-color: rgba(255, 255, 255, 0.4); border-radius: 10px; padding: 10px; margin: 20px; width: 450px;">
   <h2><div id = "message" style = "width: 450px;"><%= post.message %></div></h2>
-  <h4>Created at: <%= time_ago_in_words post.created_at%> ago
-  <% if post.created_at != post.updated_at %>/
+  <h4 align = "right">Created at: <%= time_ago_in_words post.created_at%> ago
+  <% if post.created_at != post.updated_at %><mark>/</mark>
     Updated at: <%= time_ago_in_words  post.updated_at %> ago
     <% end %>
   <p><%= link_to "delete", post, method: :delete,

@@ -1,16 +1,20 @@
+<br><center><h1>Acebook</h1>
+<h3>Sign-In</h3><br>
+</center>
 
-<%= form_for(@user) do |form| %>
+<%= form_for(@user) do |form| %><div style="background-color: rgba(255, 255, 255, 0.4); padding: 10px; margin: 20px; width: 450px;">
+<h3>Sign-Up</h3>
   <%= form.label :name %>
   <%= form.text_field :name %>
-</br>
-</br>
+<br>
+<br>
   <%= form.label :email %>
   <%= form.text_field :email %>
-</br>
-</br>
+<br>
+<br>
   <%= form.label :password %>
-  <%= form.text_field :password %>
-</br>
-</br>
-  <%= form.submit "Submit" %>
+  <%= form.password_field :password %>
+<br>
+<br>
+  <%= form.submit "Submit" %></div>
 <% end %>

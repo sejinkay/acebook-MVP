@@ -7,8 +7,8 @@
   </header>
 
 <br>
-<% @posts.reverse.each do |post| %><div style="background-color: rgba(255, 255, 255, 0.4); padding: 10px; margin: 20px; width: 450px;">
-  <h2><%= post.message %></h2>
+<% @posts.reverse.each do |post| %><div style="background-color: rgba(255, 255, 255, 0.4); border-radius: 10px; padding: 10px; margin: 20px; width: 450px;">
+  <h2><div id = "message" style = "width: 450px;"><%= post.message %></div></h2>
   <h4>Created at: <%= time_ago_in_words post.created_at%> ago
   <% if post.created_at != post.updated_at %>/
     Updated at: <%= time_ago_in_words  post.updated_at %> ago

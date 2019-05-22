@@ -76,9 +76,24 @@ a:hover {
   color: white;
 }
 
-// .div {
-//   display: inline-block
-// }
+#message {
+  width: 450px;
+  display: flex;
+}
+
+.textbox-style {
+  padding: 5px;
+  border-radius: 10px;
+  border: none;
+}
+
+.messagebox-style {
+  padding: 10px;
+  height: 100px;
+  width: 350px;
+  border-radius: 10px;
+  border: none;
+}
 
 // input[type=text]  {
 //   height: 100px;

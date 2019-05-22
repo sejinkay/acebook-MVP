@@ -6,7 +6,8 @@
     <% end %><mark>/</mark><%= link_to "Sign-Out", root_path%></h3>
     </div></nav>
   </header>
-  
+
+<br><br>
 <%= form_for @post do |form| %>
   <h4><%= form.text_field :message, class: 'messagebox-style', :placeholder => 'Write anything!', :size => 30 %>
 <br><br>

@@ -78,9 +78,9 @@ a:hover {
   color: white;
 }
 
-#message {
+.message {
   width: 450px;
-  display: flex;
+  overflow-wrap: break-word;
 }
 
 .textbox-style {
@@ -104,9 +104,11 @@ mark {
 
 .navbar {
   // overflow: hidden;
+  // background-color: white;
   position: fixed;
   top: 0;
-  width: 95%;
+  // left: 0;
+  width: 98%;
 }
 
 // input[type=text]  {

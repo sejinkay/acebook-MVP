@@ -1,6 +1,6 @@
 <h1 align = "right"><%= link_to new_post_path do %>
   New post
-<% end %></h1>
+<% end %>/<%= link_to "Sign-Out", root_path%></h1>
 
 <br>
 <% @posts.reverse.each do |post| %><div style="background-color: rgba(255, 255, 255, 0.4); padding: 10px; margin: 20px; width: 450px;">

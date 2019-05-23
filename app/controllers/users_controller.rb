@@ -22,7 +22,8 @@ class UsersController < ApplicationController
   end
 
   def email_or_username_reentry
-    (user_params[:email] && User.find_by_email(user_params[:email])) || (user_params[:name] && User.find_by_name(user_params[:name]))
+    if user_params[:email] && User.find_by_email(user_params[:email]) || user_params[:name] && User.find_by_name(user_params[:name])
       flash[:login_error] = "Email or Username unavailable, please try again"
+    end
   end
 end

@@ -1,17 +1,18 @@
-<br><center><h1><s>f</s>Acebook</h1>
+<header>
+  <nav><h3 style = "padding: 10px;"><div class="navlogin"><%= form_for(@user) do |form| %>
+  Sign-in<%= form.text_field :email, class: 'textbox-style', :required => true, :placeholder => 'Type your email', :pattern => '[^@]+@[^@]+\.[a-zA-Z]{2,6}' %>
+  <%= form.password_field :password, class: 'textbox-style', :required => true, :placeholder => 'Type your password' %>
+  <%= form.submit "Submit", class: 'button' %>
+  <% end %></h3></nav>
+  </header>
+
+<center><h1><s>f</s>Acebook</h1>
 </center>
 
 <%= form_for(@user) do |form| %><div style="background-color: rgba(255, 255, 255, 0.4); border-radius: 10px; padding: 10px; margin: 20px; width: 450px;">
 <h3>&nbsp;&nbsp;&nbsp;&nbsp;
-  Sign-Up! or...&nbsp;<%= link_to "Sign-In", posts_path%></h3><br>
- <%= form.text_field :name, class: 'textbox-style', :required => true, :placeholder => 'Type your name' %>
-<br>
-<br>
- <%= form.text_field :email, class: 'textbox-style', :required => true, :placeholder => 'Type your email', :pattern => '[^@]+@[^@]+\.[a-zA-Z]{2,6}' %>
-<br>
-<br>
- <%= form.password_field :password, class: 'textbox-style', :placeholder => 'Type your password', :required => true %>
-<br>
-<br>
- <%= form.submit "Submit", class: 'button' %><br>&nbsp;</div>
+  Join us! or...&nbsp;<%= link_to "nah, skip to main", posts_path%></h3><br> <%= form.text_field :name, class: 'textbox-style', :required => true, :placeholder => 'Type your name' %>
+<br><br> <%= form.text_field :email, class: 'textbox-style', :required => true, :placeholder => 'Type your email', :pattern => '[^@]+@[^@]+\.[a-zA-Z]{2,6}' %>
+<br><br> <%= form.password_field :password, class: 'textbox-style', :required => true, :placeholder => 'Type your password' %>
+<br><br> <%= form.submit "Submit", class: 'button' %><br>&nbsp;</div>
 <% end %>

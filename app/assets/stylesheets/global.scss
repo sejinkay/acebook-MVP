@@ -119,6 +119,21 @@ mark {
   width: 40%;
 }
 
+.navlogin {
+  // overflow: hidden;
+  // background-color: white;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  right: 5px;
+  width: 50%;
+}
+
+form {
+  float: left;
+  clear: right;
+}
+
 // input[type=text]  {
 //   height: 100px;
 // }

@@ -13,6 +13,7 @@ class PostsController < ApplicationController
       @posts = Post.all
     else
       redirect_to root_url
+    end 
   end
 
   def destroy

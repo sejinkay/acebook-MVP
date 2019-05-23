@@ -3,7 +3,9 @@
     <h3 align = "right"><%= link_to "Timeline", posts_path%>&nbsp;/
       <%= link_to new_post_path do %>
       New post
-    <% end %>/&nbsp;<%= link_to "Sign-Out", root_path%></h3>
+    <% end %>/&nbsp;<%= link_to logout_path do %>
+      Logout
+    <% end %></h3>
     </div></nav>
   </header>
 

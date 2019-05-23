@@ -18,10 +18,12 @@
   <% if post.created_at != post.updated_at %><mark>/</mark>
     Updated @ <%= time_ago_in_words  post.updated_at %> ago
     <% end %>
+
     <% if post.users_id == @user.id %>
   <p><%= link_to "delete", post, method: :delete,
     data: { confirm: "You sure?" } %>&nbsp;&nbsp;
     <%= link_to "edit", edit_post_path(post) %><% end %></h4></div><br>
+
 <% end %>
 <br/>
 <br/>

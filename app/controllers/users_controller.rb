@@ -7,7 +7,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     @user.save
-    redirect_to login_url
+    session[:current_user_id] = @user.id
+    redirect_to posts_url
   end
 
   private

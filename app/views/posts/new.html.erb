@@ -1,6 +1,15 @@
-<%= form_for @post do |form| %>
-  <%= form.label :message %>
-  <%= form.text_field :message %>
+<header>
+  <nav><div class="navbar"><h1 align = "right"><s>f</s>Acebook</h1>
+    <h3 align = "right"><%= link_to "Timeline", posts_path%>&nbsp;/
+      <%= link_to new_post_path do %>
+      New post
+    <% end %>/&nbsp;<%= link_to "Sign-Out", root_path%></h3>
+    </div></nav>
+  </header>
 
-  <%= form.submit "Submit" %>
+<br><br>
+<%= form_for @post do |form| %>
+  <h4><%= form.text_field :message, class: 'messagebox-style', :placeholder => 'Write anything!', :size => 30 %>
+<br><br>
+  <%= form.submit "Submit", class: 'button' %></h4>
 <% end %>

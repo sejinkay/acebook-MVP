@@ -10,6 +10,7 @@ class SessionsController < ApplicationController
   # end
 
   def create
+<<<<<<< HEAD
      @user = User.find_by(email:login_params[:email])
     if @user && (@user.password == login_params[:password])
 
@@ -20,6 +21,18 @@ class SessionsController < ApplicationController
       flash[:login_error] = "Email or password is invalid, please try again"
       render 'users/index'
     end
+=======
+    params
+    (params[:email])
+    user = User.find_by(email: params[:session][:email])
+      if user && user.authenticate(params[:session][:password])
+        log_in user
+        redirect_to posts_url, notice: "Logged in!"
+      else
+        flash.now[:danger] = "Email or password is invalid"
+        render "new"
+      end
+>>>>>>> 4bff20437b77a12cf7a25a4572fb21122bec329d
   end
 
   def destroy

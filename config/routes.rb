@@ -5,6 +5,12 @@ Rails.application.routes.draw do
   post'/login' => 'sessions#create'
   get 'logout', to: 'sessions#destroy', as: 'logout'
 
+<<<<<<< HEAD
+=======
+  post '/login', to: 'sessions#create'
+
+  get 'sessions/create'
+>>>>>>> 4bff20437b77a12cf7a25a4572fb21122bec329d
 
 resources :posts, only: [:index, :show, :new, :create, :edit, :update, :destroy]
 

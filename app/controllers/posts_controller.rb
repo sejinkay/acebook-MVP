@@ -9,7 +9,10 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
+    if session[:current_user_id]
+      @posts = Post.all
+    else
+      redirect_to root_url
   end
 
   def destroy
@@ -30,6 +33,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:message)
+    params.require(:post).permit(:message, :users_id)
   end
 end

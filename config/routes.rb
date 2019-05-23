@@ -10,6 +10,6 @@ Rails.application.routes.draw do
   resources :posts, only: [:index, :show, :new, :create, :edit, :update, :destroy]
   # resources :users, only: [:index, :show, :new, :create, :edit, :update, :destroy]
 
-  # root "users#new"
+  root "users#new"
 
 end

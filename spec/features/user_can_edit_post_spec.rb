@@ -6,9 +6,15 @@ RSpec.feature "Edit", type: :feature do
     sign_up
     login
     new_post
-    click_link "edit"
-    fill_in 'post[message]', with: "Hello"
-    click_button "Save changes"
+    edit_post
     expect(page).to have_no_content("world!")
+  end
+
+  scenario "Shows updated time" do
+    sign_up
+    login
+    new_post
+    edit_post
+    expect(page).to have_content("Updated @")
   end
 end

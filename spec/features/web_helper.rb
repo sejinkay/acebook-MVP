@@ -17,3 +17,9 @@ def new_post
   fill_in 'post[message]', with: "Hello, world!"
   click_button "Submit"
 end
+
+def edit_post
+  click_link "edit"
+  fill_in 'post[message]', with: "Hello"
+  click_button "Save changes"
+end

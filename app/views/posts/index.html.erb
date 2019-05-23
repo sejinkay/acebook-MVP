@@ -1,3 +1,6 @@
+
+<p><%= session[:current_user_id] %></p>
+
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
   <%= link_to "delete", post, method: :delete,
@@ -8,4 +11,9 @@
 <br/>
 <%= link_to new_post_path do %>
   New post
+<% end %>
+
+
+<%= link_to logout_path do %>
+  Logout
 <% end %>

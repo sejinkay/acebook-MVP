@@ -10,9 +10,11 @@ class SessionsController < ApplicationController
   # end
 
   def create
-    user = User.find_by(email:login_params[:email])
-    if user && (user.password == login_params[:password])
-      session[:user_id] = user.id
+     @user = User.find_by(email:login_params[:email])
+    if @user && (@user.password == login_params[:password])
+
+      session[:current_user_id] = @user.id
+
       redirect_to posts_url
     else
       flash[:login_error] = "Email or password is invalid, please try again"
@@ -21,7 +23,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session[:user_id] = nil
+    session[:current_user_id] = nil
     redirect_to root_url, notice: "Logged out!"
   end
 

@@ -16,8 +16,9 @@
   <% if post.created_at != post.updated_at %><mark>/</mark>
     Updated @ <%= time_ago_in_words  post.updated_at %> ago
     <% end %>
-  <p><%= link_to "delete", post, method: :delete,
-    data: { confirm: "You sure?" } %>&nbsp;&nbsp;
+  <a><%= link_to "delete", post, method: :delete,
+    data: { confirm: "You sure?" } %></a>
+    &nbsp;&nbsp;
     <%= link_to "edit", edit_post_path(post) %></h4></div><br>
 <% end %>
 <br/>

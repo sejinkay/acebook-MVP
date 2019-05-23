@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
 
   def create
     @user = User.find_by(email:login_params[:email])
-    if @user && (@user.password == login_params[:password])
+    if @user && @user.authenticate(login_params[:password])
       session[:current_user_id] = @user.id
       redirect_to posts_url
     else

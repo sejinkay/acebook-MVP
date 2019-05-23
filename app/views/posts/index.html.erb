@@ -9,16 +9,22 @@
     </div></nav>
   </header>
 
+<h3 style= "padding: 20px;">Welcome, <%= @user.name %></h3>
 <br><br>
 <% @posts.reverse.each do |post| %><div style="background-color: rgba(255, 255, 255, 0.4); border-radius: 10px; padding: 10px; margin: 20px; width: 450px; box-shadow: 10px 12px;">
-  <h2 style= "padding: 5px;"><div class = "message"><%= post.message %></div></h2>
+  <h4><%= (User.find_by(id: 5)).name %>
+    <% number = post.users_id %>
+    <%= number.class %>'!'
+    <%= user = User.find_by(id: 5).name %>
+  </h4><h2 style= "padding: 5px;"><div class = "message"><%= post.message %></div></h2>
   <h4 align = "right" style= "padding: 5px;">Created @ <%= time_ago_in_words post.created_at%> ago
   <% if post.created_at != post.updated_at %><mark>/</mark>
     Updated @ <%= time_ago_in_words  post.updated_at %> ago
     <% end %>
+    <% if post.users_id == @user.id %>
   <p><%= link_to "delete", post, method: :delete,
     data: { confirm: "You sure?" } %>&nbsp;&nbsp;
-    <%= link_to "edit", edit_post_path(post) %></h4></div><br>
+    <%= link_to "edit", edit_post_path(post) %><% end %></h4></div><br>
 <% end %>
 <br/>
 <br/>

@@ -9,11 +9,13 @@ class PostsController < ApplicationController
   end
 
   def index
+    @user = User.find_by(id: session[:current_user_id])
+
     if session[:current_user_id]
       @posts = Post.all
     else
       redirect_to root_url
-    end 
+    end
   end
 
   def destroy

@@ -18,3 +18,7 @@
 <br><br> <%= form.password_field :password, class: 'textbox-style', :required => true, :placeholder => 'Type your password' %>
 <br><br> <%= form.submit "Submit", class: 'button' %><br>&nbsp;</div>
 <% end %>
+
+<%if flash[:login_error]%>
+  <p><%= flash[:login_error]  =%></p>
+  <%end%>

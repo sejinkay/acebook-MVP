@@ -12,12 +12,8 @@
 <h3 style= "padding: 20px;">Welcome, <%= @user.name %></h3>
 <br><br>
 <% @posts.reverse.each do |post| %><div style="background-color: rgba(255, 255, 255, 0.4); border-radius: 10px; padding: 10px; margin: 20px; width: 450px; box-shadow: 10px 12px;">
-  <h4><%= (User.find_by(id: 5)).name %>
-    <% number = post.users_id %>
-    <%= number.class %>'!'
-    <%= user = User.find_by(id: 5).name %>
-  </h4><h2 style= "padding: 5px;"><div class = "message"><%= post.message %></div></h2>
-  <h4 align = "right" style= "padding: 5px;">Created @ <%= time_ago_in_words post.created_at%> ago
+<h2 style= "padding: 5px;"><div class = "message"><%= post.message %></div></h2>
+  <h4 align = "right" style= "padding: 5px;">Created @ <%= time_ago_in_words post.created_at%> ago by <%= user = User.find_by(id: post.users_id).name %>
   <% if post.created_at != post.updated_at %><mark>/</mark>
     Updated @ <%= time_ago_in_words  post.updated_at %> ago
     <% end %>

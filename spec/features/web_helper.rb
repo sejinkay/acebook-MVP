@@ -11,3 +11,9 @@ def login
   fill_in 'login[password]', with: "password"
   click_button "Login"
 end
+
+def new_post
+  click_link "New post"
+  fill_in 'post[message]', with: "Hello, world!"
+  click_button "Submit"
+end

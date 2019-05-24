@@ -1,4 +1,5 @@
 require 'rails_helper'
+require './spec/features/web_helper'
 
 RSpec.describe SessionsController, type: :controller do
 
@@ -11,6 +12,7 @@ RSpec.describe SessionsController, type: :controller do
 
   describe "GET #create" do
     it "returns http success" do
+      sign_up
       get :create
       expect(response).to have_http_status(:success)
     end

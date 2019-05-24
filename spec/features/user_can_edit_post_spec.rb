@@ -13,6 +13,6 @@ RSpec.feature "Edit", type: :feature do
     sign_up
     new_post
     edit_post
-    expect(page).to have_content("Updated @")
+    expect(page).to have_content("Updated")
   end
 end

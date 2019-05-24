@@ -6,4 +6,11 @@ RSpec.feature "Sign Up", type: :feature do
     sign_up
     expect(page).to have_content('Welcome, Test')
   end
+
+  scenario "Cannot sign up with existing email" do
+    sign_up
+    click_link('Logout')
+    sign_up
+    expect(page).to have_content('Email or Username unavailable, please try again')
+  end
 end

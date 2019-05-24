@@ -1,14 +1,18 @@
 require 'rails_helper'
+require './spec/features/web_helper'
 
 RSpec.feature "Edit", type: :feature do
   scenario "Can edit post" do
-    visit "/posts"
-    click_link "New post"
-    fill_in "Message", with: "Hello, world!"
-    click_button "Submit"
-    click_link "edit"
-    fill_in "Message", with: "Hello"
-    click_button "Save changes"
+    sign_up
+    new_post
+    edit_post
     expect(page).to have_no_content("world!")
+  end
+
+  scenario "Shows updated time" do
+    sign_up
+    new_post
+    edit_post
+    expect(page).to have_content("Updated @")
   end
 end

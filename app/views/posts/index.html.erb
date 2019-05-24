@@ -14,7 +14,7 @@
 
 <% @posts.reverse.each do |post| %><div class="post">
 
-  <h4 align = "right" style= "padding: 5px;">Created @ <%= time_ago_in_words post.created_at%> ago by <%= user = User.find_by(id: post.users_id).name %>
+  <h4 align = "right" style= "padding: 5px;">Created <%= time_ago_in_words post.created_at%> ago by <%= user = User.find_by(id: post.users_id).name %>
   <% if post.created_at != post.updated_at %><mark>/</mark>
     Updated @ <%= time_ago_in_words  post.updated_at %> ago
     <% end %>
@@ -25,7 +25,7 @@
     data: { confirm: "You sure?" } %>&nbsp;&nbsp;
     <%= link_to "edit", edit_post_path(post) %><% end %></h4>
 
-<h2 style= "padding: 5px;"><div class = "message"><%= post.message %></div></h2>
+<h2 style= "padding: 5px;"><div class = "message"><% if post.message.length < 30 %><h2 style = "font-size: 70;"><% end %><%= post.message %></div></h2>
 </div><br>
 <% end %>
 <br/>

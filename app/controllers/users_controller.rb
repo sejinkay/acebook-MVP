@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
+
   def new
     @user = User.new
     render 'users/new'
@@ -6,6 +9,10 @@ class UsersController < ApplicationController
 
   def create
     if email_or_username_reentry
+      flash[:login_error] = "Email or Username unavailable, please try again"
+      redirect_to root_url
+    elsif invalid_email
+      flash[:login_error] = "Incorrect email format"
       redirect_to root_url
     else
       @user = User.new(user_params)
@@ -21,9 +28,11 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :email, :password)
   end
 
+  def invalid_email
+      !(VALID_EMAIL_REGEX.match?(user_params[:email]))
+  end
+
   def email_or_username_reentry
-    if user_params[:email] && User.find_by_email(user_params[:email]) || user_params[:name] && User.find_by_name(user_params[:name])
-      flash[:login_error] = "Email or Username unavailable, please try again"
-    end
+    user_params[:email] && User.find_by_email(user_params[:email]) || user_params[:name] && User.find_by_name(user_params[:name])  
   end
 end

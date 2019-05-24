@@ -16,7 +16,7 @@
 
   <h4 align = "right" style= "padding: 5px;">Created <%= time_ago_in_words post.created_at%> ago by <%= user = User.find_by(id: post.users_id).name %>
   <% if post.created_at != post.updated_at %><mark>/</mark>
-    Updated @ <%= time_ago_in_words  post.updated_at %> ago
+    Updated <%= time_ago_in_words  post.updated_at %> ago
     <% end %>
 
 

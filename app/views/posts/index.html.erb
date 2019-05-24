@@ -10,19 +10,21 @@
   </header>
 
 <h3 style= "font-size: 25px; margin-top: 60px; margin-left: 25px;">Welcome, <%= @user.name %> 🌿</h3>
-<br>
-
 <% @posts.reverse.each do |post| %><div class="post">
-<h2 style= "padding: 5px;"><div class = "message"><%= post.message %></div></h2>
+
   <h4 align = "right" style= "padding: 5px;">Created @ <%= time_ago_in_words post.created_at%> ago by <%= user = User.find_by(id: post.users_id).name %>
   <% if post.created_at != post.updated_at %><mark>/</mark>
     Updated @ <%= time_ago_in_words  post.updated_at %> ago
     <% end %>
-
     <% if post.users_id == @user.id %>
   <p><%= link_to "delete", post, method: :delete,
     data: { confirm: "You sure?" } %>&nbsp;&nbsp;
-    <%= link_to "edit", edit_post_path(post) %><% end %></h4></div><br>
+    <%= link_to "edit", edit_post_path(post) %><% end %></h4>
+
+<h2 style= "padding: 3px;"><div class = "message"><%= post.message %></div></h2>
+
+
+  </div><br>
 
 <% end %>
 <br/>

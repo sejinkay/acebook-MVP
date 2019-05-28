@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     @user = User.find_by(email:login_params[:email])
     if @user && @user.authenticate(login_params[:password])
       session[:current_user_id] = @user.id
-      redirect_to posts_url
+      redirect_to mywall_url
     else
       flash[:login_error] = "Email or password is invalid, please try again"
       render 'users/index'

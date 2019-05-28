@@ -18,7 +18,7 @@ class UsersController < ApplicationController
       @user = User.new(user_params)
       @user.save
       session[:current_user_id] = @user.id
-      redirect_to posts_url
+      redirect_to mywall_url
     end
   end
 
@@ -33,6 +33,6 @@ class UsersController < ApplicationController
   end
 
   def email_or_username_reentry
-    user_params[:email] && User.find_by_email(user_params[:email]) || user_params[:name] && User.find_by_name(user_params[:name])  
+    user_params[:email] && User.find_by_email(user_params[:email]) || user_params[:name] && User.find_by_name(user_params[:name])
   end
 end

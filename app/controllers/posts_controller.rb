@@ -5,7 +5,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(post_params)
-    redirect_to posts_url
+    redirect_to "users/#{params[:id]}"
   end
 
   def index
@@ -41,13 +41,13 @@ class PostsController < ApplicationController
     else
       redirect_to root_url
     end
-    
+
     render 'posts/user_wall'
   end
 
   private
 
   def post_params
-    params.require(:post).permit(:message, :users_id)
+    params.require(:post).permit(:message, :users_id, :wall_owner_id)
   end
 end

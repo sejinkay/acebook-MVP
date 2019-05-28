@@ -12,14 +12,6 @@
 <h3 style= "font-size: 25px; margin-top: 60px; margin-left: 25px;">Welcome, <%= @user.name %> 🌿</h3>
 <br>
 
-<%= form_for :post do |form| %>
-  <h4><%= form.text_area :message, class: 'messagebox-style', :required => true, :placeholder => 'Write anything!', :size => 30 %>
-    <%= hidden_field_tag 'post[users_id]', session[:current_user_id] %>
-<br><br>
-  <%= form.submit "Submit", class: 'button' %></h4>
-<% end %>
-<br><br><br><br><br><br><br><br><br>
-
 <% @posts.reverse.each do |post| %><div class="post">
 
   <h4 align = "right" style= "padding: 5px;">Created <%= time_ago_in_words post.created_at%> ago by <%= user = User.find_by(id: post.users_id).name %>

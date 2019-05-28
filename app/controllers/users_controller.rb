@@ -18,8 +18,19 @@ class UsersController < ApplicationController
       @user = User.new(user_params)
       @user.save
       session[:current_user_id] = @user.id
+      request.params[:id] = @user.id
       redirect_to mywall_url
     end
+  end
+
+  def show
+    @user = User.find(params[:id])
+    if session[:current_user_id]
+      @posts = Post.all
+    else
+      redirect_to root_url
+    end
+    render 'posts/user_wall'
   end
 
   private

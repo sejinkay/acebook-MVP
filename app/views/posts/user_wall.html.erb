@@ -1,15 +1,15 @@
 <header>
   <nav><div class="navbar"><h1 align = "right"><s>f</s>Acebook</h1>
     <h3 align = "right"><%= link_to "Timeline", posts_path%>&nbsp;/
-      <%= link_to new_post_path do %>
-      New post
+      <%= link_to 'mywall' do %>
+      My Wall
     <% end %>/&nbsp;<%= link_to logout_path do %>
       Logout
     <% end %></h3>
     </div></nav>
   </header>
 
-<h3 style= "font-size: 25px; margin-top: 60px; margin-left: 25px;">Welcome, <%= @user.name %> 🌿</h3>
+<h3 style= "font-size: 25px; margin-top: 60px; margin-left: 25px;">This is your wall, <%= @user.name %> 🌿</h3>
 <br>
 
 <%= form_for :post do |form| %>

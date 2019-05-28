@@ -33,6 +33,18 @@ class PostsController < ApplicationController
     redirect_to posts_path
   end
 
+  def user_wall
+    @user = User.find_by(id: session[:current_user_id])
+
+    if session[:current_user_id]
+      @posts = Post.all
+    else
+      redirect_to root_url
+    end
+    
+    render 'posts/user_wall'
+  end
+
   private
 
   def post_params

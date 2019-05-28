@@ -30,7 +30,7 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     @post.update_attributes(post_params)
-    redirect_to posts_path
+    redirect_to mywall_url
   end
 
   def user_wall
@@ -43,24 +43,6 @@ class PostsController < ApplicationController
     end
 
     render 'posts/user_wall'
-  end
-
-  def user_wall_edit
-    @post = Post.find(params[:id])
-  end
-
-  def user_wall_update
-    @user = User.find_by(id: session[:current_user_id])
-
-    if session[:current_user_id]
-      @posts = Post.all
-    else
-      redirect_to root_url
-    end
-
-    @post = Post.find(params[:id])
-    @post.update_attributes(post_params)
-    redirect_to mywall_url
   end
 
   private

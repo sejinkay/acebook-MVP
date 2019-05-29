@@ -25,7 +25,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    if User.find_by_id(params[:id]) != nil
+    if User.find_by(id: params[:id]) || User.find_by(name: params[:id])
       validate_id
       if session[:current_user_id]
         @wall_posts = Post.where(wall_owner_id: params[:id])

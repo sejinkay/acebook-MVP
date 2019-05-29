@@ -24,14 +24,17 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
-    if session[:current_user_id]
-      @wall_posts = Post.where(wall_owner_id: params[:id])
-      render 'posts/user_wall'
-    else
-      redirect_to root_url
+    if User.find_by_id(params[:id]) != nil
+      @user = User.find(params[:id])
+        if session[:current_user_id]
+          @wall_posts = Post.where(wall_owner_id: params[:id])
+          render 'posts/user_wall'
+        else
+          redirect_to root_url
+        end
+     else
+       render file: "#{Rails.root}/public/404.html" , status: :not_found
     end
-
   end
 
   private
@@ -47,4 +50,5 @@ class UsersController < ApplicationController
   def email_or_username_reentry
     user_params[:email] && User.find_by_email(user_params[:email]) || user_params[:name] && User.find_by_name(user_params[:name])
   end
+
 end

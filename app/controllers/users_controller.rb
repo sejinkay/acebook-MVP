@@ -19,18 +19,19 @@ class UsersController < ApplicationController
       @user.save
       session[:current_user_id] = @user.id
       request.params[:id] = @user.id
-      redirect_to mywall_url
+      redirect_to "/users/#{@user.id}"
     end
   end
 
   def show
     @user = User.find(params[:id])
     if session[:current_user_id]
-      @posts = Post.all
+      @wall_posts = Post.where(wall_owner_id: params[:id])
+      render 'posts/user_wall'
     else
       redirect_to root_url
     end
-    render 'posts/user_wall'
+
   end
 
   private

@@ -24,13 +24,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    if (/^[0-9]*$/).match?(params[:id])
-    @user = User.find(params[:id])
-    else
-      @user = User.find_by(name:params[:id])
-      params[:id] = @user.id.to_s
-    end
-
+    validate_id
     if session[:current_user_id]
       @wall_posts = Post.where(wall_owner_id: params[:id])
       render 'posts/user_wall'
@@ -40,6 +34,15 @@ class UsersController < ApplicationController
   end
 
   private
+
+  def validate_id
+    if (/^[0-9]*$/).match?(params[:id])
+    @user = User.find(params[:id])
+    else
+      @user = User.find_by(name:params[:id])
+      params[:id] = @user.id.to_s
+    end
+  end
 
   def user_params
     params.require(:user).permit(:name, :email, :password)

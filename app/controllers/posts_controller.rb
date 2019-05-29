@@ -18,7 +18,7 @@ class PostsController < ApplicationController
     end
   end
 
-  
+
 
   def destroy
     @post = Post.find(params[:id])
@@ -41,11 +41,10 @@ class PostsController < ApplicationController
 
     if session[:current_user_id]
       @posts = Post.all
+      render 'posts/user_wall'
     else
       redirect_to root_url
     end
-
-    render 'posts/user_wall'
   end
 
   private

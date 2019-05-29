@@ -22,7 +22,13 @@
 <%= form_for :post do |form| %>
 <h4><%= form.text_area :message, class: 'messagebox-style', :required => true, :placeholder => 'Write anything!', :size => 30 %>
 <%= hidden_field_tag 'post[users_id]', session[:current_user_id] %>
-<%= hidden_field_tag 'post[wall_owner_id]', params[:id] %>
+  <% if (/^[0-9]*$/).match?(params[:id]) %>
+    <% params[:wall_id] = params[:id]  %>
+  <% else %>
+    <% params[:wall_id] = User.find_by(name:params[:id]).id %>
+  <% end %>
+
+<%= hidden_field_tag 'post[wall_owner_id]', params[:wall_id] %>
 <br><br>
 <%= form.submit "Submit", class: 'button' %></h4>
 <% end %>

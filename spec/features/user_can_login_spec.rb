@@ -7,7 +7,7 @@ RSpec.feature "login/logout", type: :feature do
     click_link "Logout"
     click_link "Login"
     login
-    expect(page).to have_content('Welcome, Test')
+    expect(page).to have_content('Welcome to your wall, Test')
   end
 
   scenario "Can log out when logged in" do

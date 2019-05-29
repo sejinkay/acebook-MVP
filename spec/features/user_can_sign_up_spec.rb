@@ -4,7 +4,7 @@ require './spec/features/web_helper'
 RSpec.feature "Sign Up", type: :feature do
   scenario "Can sign up and goes to posts (with username)" do
     sign_up
-    expect(page).to have_content('Welcome, Test')
+    expect(page).to have_content('Welcome to your wall, Test')
   end
 
   scenario "Cannot sign up with existing email" do

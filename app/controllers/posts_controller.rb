@@ -47,6 +47,14 @@ class PostsController < ApplicationController
     end
   end
 
+  def profile
+    render 'users/profile'
+  end
+
+  def profile_update
+    render 'users/profile'
+  end
+
   private
 
   def post_params

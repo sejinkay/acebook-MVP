@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   get 'logout', to: 'sessions#destroy', as: 'logout'
   post 'users/:id' => 'posts#create'
 
-  get 'profile' => 'layouts/profile'
+  get '/profile' => 'users#profile'
+  post '/profile' => 'posts#profile_update'
   # get '/users/:id', to: 'posts#user_wall', as: 'mywall'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

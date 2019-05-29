@@ -1,0 +1,34 @@
+<head>
+  <style>
+   body {
+      font-family: Georgia;
+      font-size: 16px;
+      line-height: 1.5;
+
+      background-image: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%);
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: white;
+
+    }
+  </style>
+</head>
+
+<header>
+  <nav>
+    <div class="navbar">
+      <h1 align="right">
+        <s>f</s>Acebook</h1>
+      <h3 align="right"><%= link_to "Timeline", posts_path%>&nbsp;/
+      <%= link_to "My Wall", "/users/#{session[:current_user_id]}"%>/&nbsp;<%= link_to logout_path do %>
+      Logout
+    <% end %>
+  </h3>
+</div>
+</nav>
+</header>
+
+<h3 style="font-size: 25px; margin-top: 60px; margin-left: 25px;">Customise your wall,
+<%= @user.name %>
+🌿</h3>
+<br>

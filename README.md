@@ -25,10 +25,6 @@ So my friends know who I am
 I want to give my name at sign up
 
 As a User
-So I don’t get confused with other people
-I want to give my last name at sign up
-
-As a User
 So only I can access my account
 I want to provide a personal password
 
@@ -37,7 +33,7 @@ So that I can access the content  in Acebook
 I want to able to be authenticated by logging in to my account;
 
 As a User
-So that I can log into my Acebook  account
+So that I can log into my Acebook account
 I want to be able to input my username and password on the homepage.
 
 As a User
@@ -49,8 +45,20 @@ So that I can log into my Acebook  account
 I want to be able to go to my personal page after login.
 
 As a User
-I would like to have my own page
-So that I can see all my own posts
+So that I can see all my own posts and posts from other users
+I would like to have my own wall
+
+As a user 
+So that I can view other users walls
+I would like to ba able to search them by /username
+
+As a user
+So that I can post on another users wall
+I would like a posts form
+
+As a user
+So that I know a user exists
+I would like a 404 error if their wall doesn't exist
 
 As a User
 I would like a form

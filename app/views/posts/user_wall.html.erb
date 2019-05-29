@@ -16,9 +16,14 @@
 </nav>
 </header>
 
-<h3 style="font-size: 25px; margin-top: 60px; margin-left: 25px;">This is your wall,
-<%= @user.name %>
+<h3 style="font-size: 25px; margin-top: 60px; margin-left: 25px;">
+  <% if session[:current_user_id] == @user.id %>
+    Welcome to your wall, <%= @user.name %>
+  <% else %>
+    <%= @user.name %>'s Wall
+  <% end %>
 🌿</h3>
+
 <br>
 
 <%= form_for :post do |form| %>
@@ -45,7 +50,7 @@ ago by
 <% end %>
 
 <p>
-  <% if post.users_id == @user.id %>
+  <% if post.users_id == session[:current_user_id] %>
     <%= link_to "delete", post, method: :delete, data: { confirm: "You sure?" } %>&nbsp;&nbsp;
     <%= link_to "edit", edit_post_path(post) %>
   <% end %>

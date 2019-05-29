@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  helper_method :turn_name_to_id
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
 
@@ -31,6 +32,14 @@ class UsersController < ApplicationController
     else
       redirect_to root_url
     end
+  end
+
+  def turn_name_to_id(string)
+  	if  (/^[0-9]*$/).match?(string)
+  		return  string
+  	else
+  		return User.find_by(name:string).id
+  	end
   end
 
   private

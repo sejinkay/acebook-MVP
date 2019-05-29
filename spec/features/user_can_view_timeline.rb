@@ -7,4 +7,10 @@ RSpec.feature "Timeline", type: :feature do
     click_link "Timeline"
     expect(page).to have_content('Welcome, Test')
   end
-end  
+
+  scenario "Cannot view users that don't exists" do
+    sign_up
+    visit('http://localhost:3000/users/Wrongname')
+    expect(page).to have_content('Error 404!')
+  end
+end

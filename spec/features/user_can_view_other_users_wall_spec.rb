@@ -9,4 +9,11 @@ RSpec.feature "Another user wall", type: :feature do
     visit ('/users/Test')
     expect(page).to have_content("Test's Wall")
   end
+
+    scenario "Can't view another users wall if not logged in" do
+      sign_up
+      click_link "Logout"
+      visit ('/users/Test')
+      expect(page).to have_content("Create an Account")
+    end
 end

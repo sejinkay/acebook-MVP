@@ -7,7 +7,6 @@ def sign_up
 end
 
 def sign_up_2
-  visit ('/')
   fill_in 'user[name]', with: "Test2"
   fill_in 'user[email]', with: "email2@hotmail.com"
   fill_in 'user[password]', with: "password"

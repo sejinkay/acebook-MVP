@@ -6,7 +6,7 @@ RSpec.feature "Another user wall", type: :feature do
     sign_up
     click_link "Logout"
     sign_up_2
-    visit ('http://test.host/users/1')
+    visit ('/users/Test')
     expect(page).to have_content("Test's Wall")
   end
 end

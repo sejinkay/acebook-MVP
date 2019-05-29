@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.friendly.find(params[:id])
     if session[:current_user_id]
       @wall_posts = Post.where(wall_owner_id: params[:id])
       render 'posts/user_wall'

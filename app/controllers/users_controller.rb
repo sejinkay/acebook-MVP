@@ -25,12 +25,16 @@ class UsersController < ApplicationController
   end
 
   def show
-    validate_id
-    if session[:current_user_id]
-      @wall_posts = Post.where(wall_owner_id: params[:id])
-      render 'posts/user_wall'
+    if User.find_by_id(params[:id]) != nil
+      validate_id
+      if session[:current_user_id]
+        @wall_posts = Post.where(wall_owner_id: params[:id])
+        render 'posts/user_wall'
+      else
+        redirect_to root_url
+      end
     else
-      redirect_to root_url
+      render file: "#{Rails.root}/public/404.html" , status: :not_found
     end
   end
 

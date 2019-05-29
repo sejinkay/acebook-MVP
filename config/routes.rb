@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   get 'logout', to: 'sessions#destroy', as: 'logout'
   post 'users/:id' => 'posts#create'
-  # get '/users/:id', to: 'posts#user_wall', as: 'mywall'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :posts

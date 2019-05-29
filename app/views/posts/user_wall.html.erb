@@ -1,5 +1,3 @@
-<h2><%=params%></h2>
-
 <header>
   <nav>
     <div class="navbar">
@@ -22,7 +20,10 @@
 <%= form_for :post do |form| %>
 <h4><%= form.text_area :message, class: 'messagebox-style', :required => true, :placeholder => 'Write anything!', :size => 30 %>
 <%= hidden_field_tag 'post[users_id]', session[:current_user_id] %>
-<%= hidden_field_tag 'post[wall_owner_id]', params[:id] %>
+<% params[:wall_id] = turn_name_to_id(params[:id]) %>
+
+<%= hidden_field_tag 'post[wall_owner_id]', params[:wall_id] %>
+
 <br><br>
 <%= form.submit "Submit", class: 'button' %></h4>
 <% end %>

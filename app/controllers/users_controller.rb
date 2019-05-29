@@ -38,14 +38,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def turn_name_to_id(string)
-  	if  (/^[0-9]*$/).match?(string)
-  		return  string
-  	else
-  		return User.find_by(name:string).id
-  	end
-  end
-
   private
 
   def validate_id
@@ -67,5 +59,13 @@ class UsersController < ApplicationController
 
   def email_or_username_reentry
     user_params[:email] && User.find_by_email(user_params[:email]) || user_params[:name] && User.find_by_name(user_params[:name])
+  end
+
+  def turn_name_to_id(string)
+    if  (/^[0-9]*$/).match?(string)
+      return  string
+    else
+      return User.find_by(name:string).id
+    end
   end
 end

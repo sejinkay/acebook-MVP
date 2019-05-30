@@ -23,9 +23,8 @@
   <h4 align="right" style="padding: 5px;">Created
     <%= time_ago_in_words post.created_at%>
     ago by
-    <%= user = User.find_by(id: post.users_id).name %>
+    <a href = "/users/<%= User.find_by(id: post.users_id).name %>"><%= user = User.find_by(id: post.users_id).name %></a>
     <% if post.created_at != post.updated_at %>
-
       - Updated
       <%= time_ago_in_words post.updated_at %>
       ago
@@ -44,6 +43,7 @@
           <h2 style="font-size: 70;">
           <% end %><%= post.message %></div>
       </h2>
+      <h4 align="right" style="padding: 5px; color: #FCFAFA;"><i>from <%= User.find_by(id: post.wall_owner_id).name %>'s wall</i></h4>
     </div><br>
   <% end %>
   <br/>

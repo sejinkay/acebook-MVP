@@ -15,9 +15,13 @@
 <h3 style="font-size: 25px; margin-top: 60px; margin-left: 25px;">Customise your wall 🌿</h3>
 <br><br>
 
-<h3 style="margin-left: 25px;">Pick your typeface & background colour!</h3>
+<h3 style="margin-left: 25px;">Pick your background colour & typeface!</h3>
 <%= form_for :user do |form| %>
 <%= form.select :bg_colour, background_colour %>
-<%= form.select :font, ['Inter', 'Georgia', 'Papyrus']%>
+<%= form.select :font, ['Inter', 'Georgia', 'Arial Black', 'Papyrus', 'Comic Sans MS', 'Courier New', 'Times New Roman']%>
 <input type="submit" class="button">
 <% end %>
+
+<%if flash[:success]%>
+<h4>&nbsp;&nbsp;<%= flash[:success] =%></h4>
+<%end%>

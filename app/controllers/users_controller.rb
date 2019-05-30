@@ -54,9 +54,9 @@ class UsersController < ApplicationController
   end
 
   def background_colour
-    colours = ["linear-gradient(to top, #5ee7df 0%, #b490ca 100%)",
-      "linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%)",
-      "linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%)"]
+    colours = [['Blue', "linear-gradient(to top, #5ee7df 0%, #b490ca 100%)"],
+      ['Red',"linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%)"],
+      ['Green', "linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%)"]]
   end
 
 

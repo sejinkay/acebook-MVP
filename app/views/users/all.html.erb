@@ -13,11 +13,12 @@
 </header>
 
 <br><br>
-  <h3 style="font-size: 25px; margin-left: 25px;"><i>AceBook Users ⛅</i></h3>
+  <h3 style="font-size: 25px; margin-left: 25px;"><i><s>f</s>Acebook Users ⛅</i></h3><br>
 
 <% @users.each do |x|  %>
-    <h3 style="margin-left: 25px;">
-      <%= link_to x.name, "/users/#{x.name}" %>
+    <h3 style="color: rgba(255, 255, 255, 0.4); margin-left: 25px;">
+      <%= link_to x.name, "/users/#{x.name}" %>&nbsp;&nbsp;
+      <sub style="font-size: 14px;">member since <%= time_ago_in_words x.created_at %> ago</sub>
       <br>
       <hr style="margin-left: 0px; text-align:left; width: 20%; border: 0;
     height: 0;

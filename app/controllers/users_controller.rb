@@ -80,4 +80,5 @@ class UsersController < ApplicationController
       return User.find_by(name:string).id
     end
   end
+  
 end

@@ -7,6 +7,10 @@ Rails.application.routes.draw do
   post 'users/:id' => 'posts#create'
   get 'users/all' => 'users#all'
 
+  get '/profile' => 'users#profile'
+  post '/profile' => 'posts#profile_update'
+  # get '/users/:id', to: 'posts#user_wall', as: 'mywall'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :posts
   resources :users

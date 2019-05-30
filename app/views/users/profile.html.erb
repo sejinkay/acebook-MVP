@@ -26,5 +26,6 @@
 <%= form_for :user do |form| %>
 <%= form.select :bg_colour, background_colour%>
 <%= form.select :font, ['Georgia', 'Papyrus']%>
+<%= form.file_field :avatar, class: "form-control" %>
 <input type="submit" class="button">
 <% end %>

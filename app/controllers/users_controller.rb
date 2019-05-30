@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   helper_method :turn_name_to_id
   helper_method :background_colour
 
+
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
 
   def new

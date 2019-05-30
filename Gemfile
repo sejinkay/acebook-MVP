@@ -7,6 +7,8 @@ end
 
 ruby '2.5.0'
 
+gem 'activestorage'
+
 gem 'bcrypt'
 
 gem 'simplecov'

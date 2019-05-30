@@ -61,8 +61,6 @@ class UsersController < ApplicationController
     user_params[:email] && User.find_by_email(user_params[:email]) || user_params[:name] && User.find_by_name(user_params[:name])
   end
 
-<<<<<<< HEAD
-=======
   def turn_name_to_id(string)
     if  (/^[0-9]*$/).match?(string)
       return  string
@@ -70,5 +68,5 @@ class UsersController < ApplicationController
       return User.find_by(name:string).id
     end
   end
->>>>>>> develop
+  
 end

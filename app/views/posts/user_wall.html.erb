@@ -28,15 +28,29 @@
 </nav>
 </header>
 
+<<<<<<< HEAD
 <h3 style="font-size: 25px; margin-top: 60px; margin-left: 25px;">This is your wall,
 <%= @user.name %>
 🤔</h3>
+=======
+<h3 style="font-size: 25px; margin-top: 60px; margin-left: 25px;">
+  <% if session[:current_user_id] == @user.id %>
+    Welcome to your wall, <%= @user.name %>
+  <% else %>
+    <%= @user.name %>'s Wall
+  <% end %>
+🌿</h3>
+
+>>>>>>> develop
 <br>
 
 <%= form_for :post do |form| %>
-<h4><%= form.text_area :message, class: 'messagebox-style', :required => true, :placeholder => 'Write anything!', :size => 30 %>
+<h4><%= form.text_area :message, id: 'text', class: 'messagebox-style', :required => true, :placeholder => 'Write anything!', :size => 30 %>
 <%= hidden_field_tag 'post[users_id]', session[:current_user_id] %>
-<%= hidden_field_tag 'post[wall_owner_id]', params[:id] %>
+<% params[:wall_id] = turn_name_to_id(params[:id]) %>
+
+<%= hidden_field_tag 'post[wall_owner_id]', params[:wall_id] %>
+
 <br><br>
 <%= form.submit "Submit", class: 'button' %></h4>
 <% end %>
@@ -57,7 +71,7 @@ ago by
 <% end %>
 
 <p>
-  <% if post.users_id == @user.id %>
+  <% if post.users_id == session[:current_user_id] %>
     <%= link_to "delete", post, method: :delete, data: { confirm: "You sure?" } %>&nbsp;&nbsp;
     <%= link_to "edit", edit_post_path(post) %>
   <% end %>

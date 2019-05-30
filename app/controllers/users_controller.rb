@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  helper_method :turn_name_to_id
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
 
@@ -24,20 +25,29 @@ class UsersController < ApplicationController
   end
 
   def show
-    if User.find_by_id(params[:id]) != nil
-      @user = User.find(params[:id])
-        if session[:current_user_id]
-          @wall_posts = Post.where(wall_owner_id: params[:id])
-          render 'posts/user_wall'
-        else
-          redirect_to root_url
-        end
-     else
-       render file: "#{Rails.root}/public/404.html" , status: :not_found
+    if User.find_by(id: params[:id]) || User.find_by(name: params[:id])
+      validate_id
+      if session[:current_user_id]
+        @wall_posts = Post.where(wall_owner_id: params[:id])
+        render 'posts/user_wall'
+      else
+        redirect_to root_url
+      end
+    else
+      render file: "#{Rails.root}/public/404.html" , status: :not_found
     end
   end
 
   private
+
+  def validate_id
+    if (/^[0-9]*$/).match?(params[:id])
+    @user = User.find(params[:id])
+    else
+      @user = User.find_by(name:params[:id])
+      params[:id] = @user.id.to_s
+    end
+  end
 
   def user_params
     params.require(:user).permit(:name, :email, :password)
@@ -51,4 +61,14 @@ class UsersController < ApplicationController
     user_params[:email] && User.find_by_email(user_params[:email]) || user_params[:name] && User.find_by_name(user_params[:name])
   end
 
+<<<<<<< HEAD
+=======
+  def turn_name_to_id(string)
+    if  (/^[0-9]*$/).match?(string)
+      return  string
+    else
+      return User.find_by(name:string).id
+    end
+  end
+>>>>>>> develop
 end

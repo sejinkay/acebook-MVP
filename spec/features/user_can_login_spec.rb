@@ -7,7 +7,7 @@ RSpec.feature "login/logout", type: :feature do
     click_link "Logout"
     click_link "Login"
     login
-    expect(page).to have_content('Welcome, Test')
+    expect(page).to have_content('Welcome to your wall, Test')
   end
 
   scenario "Can log out when logged in" do
@@ -34,5 +34,12 @@ RSpec.feature "login/logout", type: :feature do
     fill_in 'login[password]', with: "parseword"
     click_button "Login"
     expect(page).to have_content('Email or password is invalid, please try again')
+  end
+
+  scenario "Cannot view the posts without login" do
+    sign_up
+    click_link('Logout')
+    visit('http://localhost:3000/users/Test')
+    expect(page).to have_content('Create an Account')
   end
 end

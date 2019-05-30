@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    if email_or_username_reentry
+    if email_or_username_reentry || invalid_username 
       flash[:login_error] = "Email or Username unavailable, please try again"
       redirect_to root_url
     elsif invalid_email

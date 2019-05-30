@@ -46,6 +46,12 @@ class UsersController < ApplicationController
     end
   end
 
+  def profile_update
+    @user = User.find(session[:current_user_id])
+    @user.update_attributes(user_params)
+  
+  end
+
   private
 
   def validate_id
@@ -80,5 +86,5 @@ class UsersController < ApplicationController
       return User.find_by(name:string).id
     end
   end
-  
+
 end

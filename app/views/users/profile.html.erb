@@ -1,8 +1,8 @@
 <head>
   <style>
-   body {
-     overflow: hidden;
-   }
+    body {
+      overflow: hidden;
+    }
   </style>
 </head>
 <header>
@@ -11,37 +11,20 @@
       <h1 align="right">
         <s>f</s>Acebook</h1>
       <h3 align="right"><%= link_to "Timeline", posts_path%>&nbsp;/
-      <%= link_to "My Wall", "/users/#{session[:current_user_id]}"%>&nbsp;/&nbsp;<%= link_to "Profile", '/profile'%>&nbsp;/&nbsp;<%= link_to logout_path do %>
-      Logout
-    <% end %>
-  </h3>
-</div>
+        <%= link_to "My Wall", "/users/#{session[:current_user_id]}"%>&nbsp;/&nbsp;<%= link_to "Profile", '/profile'%>&nbsp;/&nbsp;<%= link_to logout_path do %>
+        Logout
+      <% end %>
+    </h3>
+  </div>
 </nav>
 </header>
 
-<h3 style="font-size: 25px; margin-top: 60px; margin-left: 25px;">Customise your wall
-🌿</h3>
+<h3 style="font-size: 25px; margin-top: 60px; margin-left: 25px;">Customise your wall 🌿</h3>
 <br><br>
 
 <h3 style="margin-left: 25px;">Pick your typeface & background colour...and favourite emoji!</h3>
-<%= form_for :post do |form| %>
-  <select name="typeface" style="margin-left: 25px;">
-    <option value="Default">Default</option>
-    <option value="Georgia">Georgia</option>
-  </select>
-  <select name="wall_colour" style="margin-left: 25px;">
-    <option value="Blue">Blue</option>
-    <option value="Red">Red</option>
-    <option value="Green">Green</option>
-    <option value="B/W">B/W</option>
-  </select>
-
-  <select name="emoji" style="margin-left: 25px;">
-    <option value="🌿">🌿</option>
-    <option value="🤔">🤔</option>
-    <option value="🌺">🌺</option>
-    <option value="🧜">🧜</option>
-    <option value="🍙">🍙</option>
-  </select>
-  <input type="submit" class="button">
+<%= form_for :user do |form| %>
+<%= form.select :bg_colour, ['blue', 'red', 'green']%>
+<%= form.select :font, ['Georgia', 'Papyrus']%>
+<input type="submit" class="button">
 <% end %>

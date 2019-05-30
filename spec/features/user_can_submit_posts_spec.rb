@@ -10,7 +10,7 @@ RSpec.feature "Timeline", type: :feature do
 
   scenario "Can submit posts on the named URL" do
     sign_up
-    visit('http://localhost:3000/users/Test')
+    visit('/users/Test')
     new_post
     expect(page).to have_content("Hello, world!")
   end

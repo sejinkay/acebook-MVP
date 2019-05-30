@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    if email_or_username_reentry || invalid_username 
+    if email_or_username_reentry || invalid_username
       flash[:login_error] = "Email or Username unavailable, please try again"
       redirect_to root_url
     elsif invalid_email
@@ -58,7 +58,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name, :email, :password)
+    params.require(:user).permit(:name, :email, :password, :bg_colour, :font)
   end
 
   def invalid_username

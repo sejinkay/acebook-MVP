@@ -38,6 +38,14 @@ class UsersController < ApplicationController
     end
   end
 
+  def all
+    if session[:current_user_id]
+      @users = User.all
+    else
+      render file: "#{Rails.root}/public/501.html" , status: :not_found
+    end
+  end
+
   private
 
   def validate_id
@@ -51,6 +59,10 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :email, :password)
+  end
+
+  def invalid_username
+    user_params[:name] == 'all'
   end
 
   def invalid_email

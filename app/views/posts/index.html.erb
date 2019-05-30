@@ -25,8 +25,8 @@
     ago by
     <%= user = User.find_by(id: post.users_id).name %>
     <% if post.created_at != post.updated_at %>
-      <mark>/</mark>
-      Updated
+
+      - Updated
       <%= time_ago_in_words post.updated_at %>
       ago
     <% end %>

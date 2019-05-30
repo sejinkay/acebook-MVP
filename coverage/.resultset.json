@@ -1,7 +1,11 @@
 {
   "RSpec": {
     "coverage": {
+<<<<<<< HEAD
       "/Users/AW/Desktop/acebook-MVP/spec/controllers/posts_controller_spec.rb": [
+=======
+      "/Users/mike/Projects/acebook-rails-template/spec/controllers/posts_controller_spec.rb": [
+>>>>>>> tests
         1,
         null,
         1,
@@ -32,7 +36,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/Users/AW/Desktop/acebook-MVP/spec/rails_helper.rb": [
+=======
+      "/Users/mike/Projects/acebook-rails-template/spec/rails_helper.rb": [
+>>>>>>> tests
         null,
         1,
         1,
@@ -91,14 +99,22 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/Users/AW/Desktop/acebook-MVP/config/environment.rb": [
+=======
+      "/Users/mike/Projects/acebook-rails-template/config/environment.rb": [
+>>>>>>> tests
         null,
         1,
         null,
         null,
         1
       ],
+<<<<<<< HEAD
       "/Users/AW/Desktop/acebook-MVP/config/application.rb": [
+=======
+      "/Users/mike/Projects/acebook-rails-template/config/application.rb": [
+>>>>>>> tests
         1,
         null,
         1,
@@ -118,12 +134,20 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/Users/AW/Desktop/acebook-MVP/config/boot.rb": [
+=======
+      "/Users/mike/Projects/acebook-rails-template/config/boot.rb": [
+>>>>>>> tests
         1,
         null,
         1
       ],
+<<<<<<< HEAD
       "/Users/AW/Desktop/acebook-MVP/config/environments/test.rb": [
+=======
+      "/Users/mike/Projects/acebook-rails-template/config/environments/test.rb": [
+>>>>>>> tests
         1,
         null,
         null,
@@ -167,7 +191,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/Users/AW/Desktop/acebook-MVP/config/initializers/application_controller_renderer.rb": [
+=======
+      "/Users/mike/Projects/acebook-rails-template/config/initializers/application_controller_renderer.rb": [
+>>>>>>> tests
         null,
         null,
         null,
@@ -175,7 +203,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/Users/AW/Desktop/acebook-MVP/config/initializers/assets.rb": [
+=======
+      "/Users/mike/Projects/acebook-rails-template/config/initializers/assets.rb": [
+>>>>>>> tests
         null,
         null,
         null,
@@ -191,7 +223,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/Users/AW/Desktop/acebook-MVP/config/initializers/backtrace_silencers.rb": [
+=======
+      "/Users/mike/Projects/acebook-rails-template/config/initializers/backtrace_silencers.rb": [
+>>>>>>> tests
         null,
         null,
         null,
@@ -200,20 +236,32 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/Users/AW/Desktop/acebook-MVP/config/initializers/cookies_serializer.rb": [
+=======
+      "/Users/mike/Projects/acebook-rails-template/config/initializers/cookies_serializer.rb": [
+>>>>>>> tests
         null,
         null,
         null,
         null,
         1
       ],
+<<<<<<< HEAD
       "/Users/AW/Desktop/acebook-MVP/config/initializers/filter_parameter_logging.rb": [
+=======
+      "/Users/mike/Projects/acebook-rails-template/config/initializers/filter_parameter_logging.rb": [
+>>>>>>> tests
         null,
         null,
         null,
         1
       ],
+<<<<<<< HEAD
       "/Users/AW/Desktop/acebook-MVP/config/initializers/inflections.rb": [
+=======
+      "/Users/mike/Projects/acebook-rails-template/config/initializers/inflections.rb": [
+>>>>>>> tests
         null,
         null,
         null,
@@ -231,13 +279,21 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/Users/AW/Desktop/acebook-MVP/config/initializers/mime_types.rb": [
+=======
+      "/Users/mike/Projects/acebook-rails-template/config/initializers/mime_types.rb": [
+>>>>>>> tests
         null,
         null,
         null,
         null
       ],
+<<<<<<< HEAD
       "/Users/AW/Desktop/acebook-MVP/config/initializers/wrap_parameters.rb": [
+=======
+      "/Users/mike/Projects/acebook-rails-template/config/initializers/wrap_parameters.rb": [
+>>>>>>> tests
         null,
         null,
         null,
@@ -253,7 +309,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/Users/AW/Desktop/acebook-MVP/config/routes.rb": [
+=======
+      "/Users/mike/Projects/acebook-rails-template/config/routes.rb": [
+>>>>>>> tests
         1,
         1,
         1,
@@ -270,6 +330,7 @@
         1,
         null
       ],
+<<<<<<< HEAD
       "/Users/AW/Desktop/acebook-MVP/app/helpers/application_helper.rb": [
         1,
         null
@@ -283,14 +344,34 @@
         null
       ],
       "/Users/AW/Desktop/acebook-MVP/app/controllers/posts_controller.rb": [
+=======
+      "/Users/mike/Projects/acebook-rails-template/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/mike/Projects/acebook-rails-template/app/helpers/sessions_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/mike/Projects/acebook-rails-template/app/helpers/users_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/mike/Projects/acebook-rails-template/app/controllers/posts_controller.rb": [
+>>>>>>> tests
         1,
         1,
         1,
         null,
         null,
         1,
+<<<<<<< HEAD
         4,
         4,
+=======
+        7,
+        7,
+>>>>>>> tests
         null,
         null,
         1,
@@ -333,16 +414,28 @@
         1,
         null,
         1,
+<<<<<<< HEAD
         6,
         null,
         null
       ],
       "/Users/AW/Desktop/acebook-MVP/app/controllers/application_controller.rb": [
+=======
+        9,
+        null,
+        null
+      ],
+      "/Users/mike/Projects/acebook-rails-template/app/controllers/application_controller.rb": [
+>>>>>>> tests
         1,
         1,
         null
       ],
+<<<<<<< HEAD
       "/Users/AW/Desktop/acebook-MVP/spec/controllers/sessions_controller_spec.rb": [
+=======
+      "/Users/mike/Projects/acebook-rails-template/spec/controllers/sessions_controller_spec.rb": [
+>>>>>>> tests
         1,
         null,
         null,
@@ -364,7 +457,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/Users/AW/Desktop/acebook-MVP/app/controllers/sessions_controller.rb": [
+=======
+      "/Users/mike/Projects/acebook-rails-template/app/controllers/sessions_controller.rb": [
+>>>>>>> tests
         1,
         1,
         4,
@@ -383,8 +480,13 @@
         null,
         null,
         1,
+<<<<<<< HEAD
         8,
         8,
+=======
+        7,
+        7,
+>>>>>>> tests
         null,
         null,
         1,
@@ -395,7 +497,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/Users/AW/Desktop/acebook-MVP/spec/controllers/users_controller_spec.rb": [
+=======
+      "/Users/mike/Projects/acebook-rails-template/spec/controllers/users_controller_spec.rb": [
+>>>>>>> tests
         1,
         null,
         1,
@@ -424,13 +530,18 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/Users/AW/Desktop/acebook-MVP/app/controllers/users_controller.rb": [
+=======
+      "/Users/mike/Projects/acebook-rails-template/app/controllers/users_controller.rb": [
+>>>>>>> tests
         1,
         1,
         null,
         1,
         null,
         1,
+<<<<<<< HEAD
         27,
         27,
         null,
@@ -448,15 +559,42 @@
         15,
         15,
         15,
+=======
+        24,
+        24,
+        null,
+        null,
+        1,
+        16,
+        1,
+        1,
+        15,
+        1,
+        1,
+        null,
+        14,
+        14,
+        14,
+        14,
+        14,
+>>>>>>> tests
         null,
         null,
         null,
         1,
+<<<<<<< HEAD
         26,
         25,
         25,
         24,
         24,
+=======
+        23,
+        23,
+        23,
+        22,
+        22,
+>>>>>>> tests
         null,
         1,
         null,
@@ -466,8 +604,13 @@
         null,
         null,
         1,
+<<<<<<< HEAD
         24,
         24,
+=======
+        22,
+        22,
+>>>>>>> tests
         null,
         0,
         null,
@@ -476,15 +619,24 @@
         1,
         null,
         1,
+<<<<<<< HEAD
         25,
         23,
         null,
         2,
         2,
+=======
+        23,
+        20,
+        null,
+        3,
+        3,
+>>>>>>> tests
         null,
         null,
         null,
         1,
+<<<<<<< HEAD
         97,
         null,
         null,
@@ -498,6 +650,21 @@
         null
       ],
       "/Users/AW/Desktop/acebook-MVP/spec/features/user_can_delete_post_spec.rb": [
+=======
+        91,
+        null,
+        null,
+        1,
+        15,
+        null,
+        null,
+        1,
+        16,
+        null,
+        null
+      ],
+      "/Users/mike/Projects/acebook-rails-template/spec/features/user_can_delete_post_spec.rb": [
+>>>>>>> tests
         1,
         1,
         null,
@@ -510,6 +677,7 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/Users/AW/Desktop/acebook-MVP/spec/features/web_helper.rb": [
         1,
         15,
@@ -524,6 +692,15 @@
         1,
         1,
         1,
+=======
+      "/Users/mike/Projects/acebook-rails-template/spec/features/web_helper.rb": [
+        1,
+        13,
+        13,
+        13,
+        13,
+        13,
+>>>>>>> tests
         null,
         null,
         1,
@@ -533,8 +710,8 @@
         null,
         null,
         1,
-        4,
-        4,
+        5,
+        5,
         null,
         null,
         1,
@@ -543,7 +720,11 @@
         2,
         null
       ],
+<<<<<<< HEAD
       "/Users/AW/Desktop/acebook-MVP/spec/features/user_can_edit_post_spec.rb": [
+=======
+      "/Users/mike/Projects/acebook-rails-template/spec/features/user_can_edit_post_spec.rb": [
+>>>>>>> tests
         1,
         1,
         null,
@@ -563,7 +744,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/Users/AW/Desktop/acebook-MVP/spec/features/user_can_login_spec.rb": [
+=======
+      "/Users/mike/Projects/acebook-rails-template/spec/features/user_can_login_spec.rb": [
+>>>>>>> tests
         1,
         1,
         null,
@@ -595,6 +780,13 @@
         1,
         1,
         1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
         1,
         1,
         1,
@@ -603,6 +795,7 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/Users/AW/Desktop/acebook-MVP/spec/features/user_can_sign_up_spec.rb": [
         1,
         1,
@@ -631,6 +824,9 @@
         null
       ],
       "/Users/AW/Desktop/acebook-MVP/spec/features/user_can_submit_posts_spec.rb": [
+=======
+      "/Users/mike/Projects/acebook-rails-template/spec/features/user_can_sign_up_spec.rb": [
+>>>>>>> tests
         1,
         1,
         null,
@@ -675,9 +871,20 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/Users/AW/Desktop/acebook-MVP/spec/features/user_sees_404_spec.rb": [
+=======
+      "/Users/mike/Projects/acebook-rails-template/spec/features/user_can_submit_posts_spec.rb": [
         1,
         1,
+        null,
+        1,
+        1,
+>>>>>>> tests
+        1,
+        1,
+        1,
+        null,
         null,
         1,
         1,
@@ -687,7 +894,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/Users/AW/Desktop/acebook-MVP/spec/helpers/sessions_helper_spec.rb": [
+=======
+      "/Users/mike/Projects/acebook-rails-template/spec/helpers/sessions_helper_spec.rb": [
+>>>>>>> tests
         1,
         null,
         null,
@@ -704,7 +915,11 @@
         1,
         null
       ],
+<<<<<<< HEAD
       "/Users/AW/Desktop/acebook-MVP/spec/helpers/users_helper_spec.rb": [
+=======
+      "/Users/mike/Projects/acebook-rails-template/spec/helpers/users_helper_spec.rb": [
+>>>>>>> tests
         1,
         null,
         null,
@@ -721,52 +936,84 @@
         1,
         null
       ],
+<<<<<<< HEAD
       "/Users/AW/Desktop/acebook-MVP/spec/models/post_spec.rb": [
+=======
+      "/Users/mike/Projects/acebook-rails-template/spec/models/post_spec.rb": [
+>>>>>>> tests
         1,
         null,
         1,
         2,
         null
       ],
+<<<<<<< HEAD
       "/Users/AW/Desktop/acebook-MVP/app/models/post.rb": [
+=======
+      "/Users/mike/Projects/acebook-rails-template/app/models/post.rb": [
+>>>>>>> tests
         1,
         1,
         0,
         null,
         null
       ],
+<<<<<<< HEAD
       "/Users/AW/Desktop/acebook-MVP/app/models/application_record.rb": [
+=======
+      "/Users/mike/Projects/acebook-rails-template/app/models/application_record.rb": [
+>>>>>>> tests
         1,
         1,
         null
       ],
+<<<<<<< HEAD
       "/Users/AW/Desktop/acebook-MVP/spec/models/user_spec.rb": [
+=======
+      "/Users/mike/Projects/acebook-rails-template/spec/models/user_spec.rb": [
+>>>>>>> tests
         1,
         null,
         1,
         1,
         null
       ],
+<<<<<<< HEAD
       "/Users/AW/Desktop/acebook-MVP/app/models/user.rb": [
+=======
+      "/Users/mike/Projects/acebook-rails-template/app/models/user.rb": [
+>>>>>>> tests
         1,
         1,
         null
       ],
+<<<<<<< HEAD
       "/Users/AW/Desktop/acebook-MVP/spec/views/sessions/create.html.erb_spec.rb": [
+=======
+      "/Users/mike/Projects/acebook-rails-template/spec/views/sessions/create.html.erb_spec.rb": [
+>>>>>>> tests
         1,
         null,
         1,
         1,
         null
       ],
+<<<<<<< HEAD
       "/Users/AW/Desktop/acebook-MVP/spec/views/sessions/destroy.html.erb_spec.rb": [
+=======
+      "/Users/mike/Projects/acebook-rails-template/spec/views/sessions/destroy.html.erb_spec.rb": [
+>>>>>>> tests
         1,
         null,
         1,
         1,
         null
       ],
+<<<<<<< HEAD
       "/Users/AW/Desktop/acebook-MVP/spec/views/sessions/new.html.erb_spec.rb": [
+=======
+      "/Users/mike/Projects/acebook-rails-template/spec/views/sessions/new.html.erb_spec.rb": [
+>>>>>>> tests
         1,
         null,
         1,
@@ -774,6 +1021,10 @@
         null
       ]
     },
+<<<<<<< HEAD
     "timestamp": 1559144543
+=======
+    "timestamp": 1559210337
+>>>>>>> tests
   }
 }

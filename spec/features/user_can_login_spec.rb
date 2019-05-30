@@ -35,4 +35,11 @@ RSpec.feature "login/logout", type: :feature do
     click_button "Login"
     expect(page).to have_content('Email or password is invalid, please try again')
   end
+
+  scenario "Cannot view the posts without login" do
+    sign_up
+    click_link('Logout')
+    visit('http://localhost:3000/users/Test')
+    expect(page).to have_content('Create an Account')
+  end
 end

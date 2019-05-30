@@ -48,10 +48,15 @@ class UsersController < ApplicationController
   end
 
   def profile_update
-    @user = User.find(session[:current_user_id])
-    @user.update_attributes(user_params)
-    flash[:success] = "setting saved!"
-    redirect_to '/profile'
+    if invalid_profile_setting
+      flash[:profile_error] = "Please pick your setting"
+      redirect_to '/profile'
+    else
+      @user = User.find(session[:current_user_id])
+      @user.update_attributes(user_params)
+      flash[:success] = "setting saved!"
+      redirect_to '/profile'
+    end
   end
 
   def background_colour
@@ -101,6 +106,11 @@ class UsersController < ApplicationController
     else
       return User.find_by(name:string).id
     end
+  end
+
+  def invalid_profile_setting
+    user_params[:bg_colour] == ''
+    user_params[:font] == ''
   end
 
 end

@@ -17,11 +17,14 @@
 
 <h3 style="margin-left: 25px;">Pick your background colour & typeface!</h3>
 <%= form_for :user do |form| %>
-<%= form.select :bg_colour, background_colour %>
-<%= form.select :font, ['Inter', 'Georgia', 'Arial Black', 'Papyrus', 'Comic Sans MS', 'Courier New', 'Times New Roman']%>
+<%= form.select :bg_colour, background_colour, :prompt => "Pick your colour"%>
+<%= form.select :font, ['Inter', 'Georgia', 'Arial Black', 'Papyrus', 'Comic Sans MS', 'Courier New', 'Times New Roman'], :prompt => "Pick your typeface"%>
 <input type="submit" class="button">
 <% end %>
 
 <%if flash[:success]%>
 <h4>&nbsp;&nbsp;<%= flash[:success] =%></h4>
+<%end%>
+<%if flash[:profile_error]%>
+<h4>&nbsp;&nbsp;<%= flash[:profile_error] =%></h4>
 <%end%>

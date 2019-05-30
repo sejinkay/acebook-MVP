@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    if email_or_username_reentry
+    if email_or_username_reentry || invalid_username
       flash[:login_error] = "Email or Username unavailable, please try again"
       redirect_to root_url
     elsif invalid_email
@@ -38,6 +38,14 @@ class UsersController < ApplicationController
     end
   end
 
+  def all
+    if session[:current_user_id]
+      @users = User.all
+    else
+      render file: "#{Rails.root}/public/501.html" , status: :not_found
+    end
+  end
+
   private
 
   def validate_id
@@ -55,6 +63,10 @@ class UsersController < ApplicationController
 
   def invalid_email
       !(VALID_EMAIL_REGEX.match?(user_params[:email]))
+  end
+
+  def invalid_username
+    user_params[:name] == 'all'
   end
 
   def email_or_username_reentry

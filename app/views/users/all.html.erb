@@ -1,0 +1,7 @@
+<h1>All AceBook Users</h1>
+
+<% @users.each do |x|  %>
+
+  <h2>
+    <%= link_to x.name, "/users/#{x.name}" %><br></h2>
+<% end %>

@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   helper_method :turn_name_to_id
+  helper_method :background_colour
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
 
@@ -49,8 +50,16 @@ class UsersController < ApplicationController
   def profile_update
     @user = User.find(session[:current_user_id])
     @user.update_attributes(user_params)
-  
+    redirect_to '/profile'
   end
+
+  def background_colour
+    colours = ["linear-gradient(to top, #5ee7df 0%, #b490ca 100%)",
+      "linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%)",
+      "linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%)"]
+  end
+
+
 
   private
 

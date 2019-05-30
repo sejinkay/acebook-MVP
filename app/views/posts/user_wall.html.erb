@@ -1,14 +1,15 @@
 <head>
   <style>
     body {
-      font-family: <%= @user.name %>;
+      font-family: <%= @user.font %>;
       font-size: 16px;
       line-height: 1.5;
 
-      background-image: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%);
-      background-repeat: no-repeat;
+      background-image: <%= @user.bg_colour %>;
+      /* background-repeat: no-repeat;
       background-attachment: fixed;
-      color: white;
+      color: white; */
+      important!;
 
     }
   </style>

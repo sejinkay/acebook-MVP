@@ -24,7 +24,7 @@
 
 <h3 style="margin-left: 25px;">Pick your typeface & background colour...and favourite emoji!</h3>
 <%= form_for :user do |form| %>
-<%= form.select :bg_colour, ['blue', 'red', 'green']%>
+<%= form.select :bg_colour, background_colour%>
 <%= form.select :font, ['Georgia', 'Papyrus']%>
 <input type="submit" class="button">
 <% end %>

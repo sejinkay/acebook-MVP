@@ -1,10 +1,27 @@
+<head>
+  <style>
+    body {
+      font-family: <%= @user.font %>;
+      font-size: 16px;
+      line-height: 1.5;
+
+      background-image: <%= @user.bg_colour %>;
+      /* background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: white; */
+      important!;
+
+    }
+  </style>
+</head>
+
 <header>
   <nav>
     <div class="navbar">
       <h1 align="right">
         <s>f</s>Acebook</h1>
       <h3 align="right"><%= link_to "Timeline", posts_path%>&nbsp;/
-        <%= link_to "My Wall ", "/users/#{session[:current_user_id]}"%>/&nbsp;<%= link_to 'Users ', '/users/all'%>/&nbsp;<%= link_to logout_path do %>
+        <%= link_to "My Wall ", "/users/#{session[:current_user_id]}"%>/&nbsp;<%= link_to 'Users ', '/users/all'%>&nbsp;/&nbsp;<%= link_to "Profile", '/profile'%>&nbsp;/&nbsp;<%= link_to logout_path do %>
         Logout
       <% end %>
     </h3>

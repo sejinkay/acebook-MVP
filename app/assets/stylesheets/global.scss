@@ -1,6 +1,8 @@
-@import url('https://rsms.me/inter/inter.css');
+@import url("https://rsms.me/inter/inter.css");
 @supports (font-variation-settings: normal) {
-  html { font-family: 'Inter var', sans-serif; }
+  html {
+    font-family: "Inter var", sans-serif;
+  }
 }
 
 :root {
@@ -10,12 +12,13 @@
   --secondary-blue: #b3c3cc;
   --primary-orange: #ff6719;
   --secondary-orange: #feada6;
-  --primary-green: #99E8E6;
-  --primary-white: #E8E7E4;
+  --primary-green: #99e8e6;
+  --primary-white: #e8e7e4;
 }
 
-html, body {
-  // height:100%;
+html,
+body {
+  height: 100%;
   overscroll-behavior: none;
 }
 
@@ -28,7 +31,6 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   color: white;
-
 }
 
 h1 {
@@ -59,8 +61,8 @@ h4 {
 }
 
 .highlight {
-    background-color: rgba(121, 161, 181, 0.9);
-    /* background-image: linear-gradient(to right, #ffe359 0%, #fff2ac 100%); */
+  background-color: rgba(121, 161, 181, 0.9);
+  /* background-image: linear-gradient(to right, #ffe359 0%, #fff2ac 100%); */
 }
 
 a {
@@ -85,7 +87,7 @@ a:hover {
 }
 
 .button:hover {
-  background-color: #F2ED91;
+  background-color: #f2ed91;
   color: white;
 }
 
@@ -164,10 +166,11 @@ select {
   -webkit-padding-end: 20px;
   -webkit-padding-start: 2px;
   -webkit-user-select: none;
-  background-image: url(http://i62.tinypic.com/15xvbd5.png), -webkit-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
+  background-image: url(http://i62.tinypic.com/15xvbd5.png),
+    -webkit-linear-gradient(#fafafa, #f4f4f4 40%, #e5e5e5);
   background-position: 97% center;
   background-repeat: no-repeat;
-  border: 1px solid #AAA;
+  border: 1px solid #aaa;
   color: #555;
   // font-size: inherit;
   margin: 20px;
@@ -177,7 +180,6 @@ select {
   white-space: nowrap;
   width: 120px;
 }
-
 
 // input[type=text]  {
 //   height: 100px;

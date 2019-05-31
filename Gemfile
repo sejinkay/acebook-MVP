@@ -7,6 +7,8 @@ end
 
 ruby '2.5.0'
 
+gem 'carrierwave'
+
 gem 'bcrypt'
 
 gem 'simplecov'

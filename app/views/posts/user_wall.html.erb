@@ -79,6 +79,20 @@
           <% end %><%= post.message %></div>
       </h2>
     </div><br>
+    <%= form_for [post, post.comments.new] do |form| %>
+    <%= form.text_field :content, :placeholder => 'Comment here', :size => 20 %>
+    <%= hidden_field_tag 'comment[user_id]', session[:current_user_id] %>
+    <%= form.submit "Submit", class: 'button' %>
+    <% end %>
+
+    <% if post.comments %>
+
+    <% post.comments.each do |comment| %>
+      <% comment.content %>
+    <% end %>
+
+    <% end %>
+
   <% end %>
   <br/>
   <br/>

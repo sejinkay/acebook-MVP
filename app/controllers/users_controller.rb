@@ -48,15 +48,27 @@ class UsersController < ApplicationController
   end
 
   def profile_update
-    @user = User.find(session[:current_user_id])
-    @user.update_attributes(user_params)
-    redirect_to '/profile'
+    if invalid_profile_setting
+      flash[:profile_error] = "Please pick your setting"
+      redirect_to '/profile'
+    else
+      @user = User.find(session[:current_user_id])
+      @user.update_attributes(user_params)
+      flash[:success] = "setting saved!"
+      redirect_to '/profile'
+    end
   end
 
   def background_colour
-    colours = [['Blue', "linear-gradient(to top, #5ee7df 0%, #b490ca 100%)"],
+    colours = [
+      ['Blue', "linear-gradient(to top, #5ee7df 0%, #b490ca 100%)"],
       ['Red',"linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%)"],
-      ['Green', "linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%)"]]
+      ['Green', "linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%)"],
+      ['Black', "linear-gradient(to right, #868f96 0%, #596164 100%)"],
+      ['Cherry', "linear-gradient(to top, #dbdcd7 0%, #dddcd7 24%, #e2c9cc 30%, #e7627d 46%, #b8235a 59%, #801357 71%, #3d1635 84%, #1c1a27 100%)"],
+      ['Pink', "linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%)"],
+      ['Purple', "linear-gradient(-225deg, #5271C4 0%, #B19FFF 48%, #ECA1FE 100%)"]
+    ]
   end
 
 
@@ -94,6 +106,11 @@ class UsersController < ApplicationController
     else
       return User.find_by(name:string).id
     end
+  end
+
+  def invalid_profile_setting
+    user_params[:bg_colour] == ''
+    user_params[:font] == ''
   end
 
 end

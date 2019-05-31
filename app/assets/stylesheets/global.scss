@@ -16,9 +16,8 @@
   --primary-white: #e8e7e4;
 }
 
-html,
-body {
-  height: 100%;
+html,body {
+  // height: 100%;
   overscroll-behavior: none;
 }
 
@@ -178,7 +177,7 @@ select {
   padding: 5px 10px;
   text-overflow: ellipsis;
   white-space: nowrap;
-  width: 120px;
+  width: 150px;
 }
 
 // input[type=text]  {

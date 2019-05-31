@@ -20,10 +20,10 @@
 <% @posts.reverse.each do |post| %>
 <div class="post">
 
-  <h4 align="right" style="padding: 5px;">Created
+  <h4 align="right" style="padding: 5px;  margin-bottom: 0px;">Created
     <%= time_ago_in_words post.created_at%>
     ago by
-    <%= user = User.find_by(id: post.users_id).name %>
+    <a href = "/users/<%= User.find_by(id: post.users_id).name %>"  style="background: rgba(255, 255, 255, 0.4);"><%= user = User.find_by(id: post.users_id).name %></a>
     <% if post.created_at != post.updated_at %>
 
       - Updated
@@ -36,6 +36,9 @@
         <%= link_to "delete", post, method: :delete, data: { confirm: "You sure?" } %>&nbsp;&nbsp;
         <%= link_to "edit", edit_post_path(post) %>
       <% end %>
+        <% if post.users_id != @user.id %>
+        <br>
+        <% end %>
     </h4>
 
     <h2 style="padding: 5px;">
@@ -44,6 +47,7 @@
           <h2 style="font-size: 70;">
           <% end %><%= post.message %></div>
       </h2>
+      <h4 align="right" style="padding: 5px; color: #FCFAFA; margin-bottom: 0px;"><i>from <%= User.find_by(id: post.wall_owner_id).name %>'s wall</i></h4>
     </div><br>
   <% end %>
   <br/>

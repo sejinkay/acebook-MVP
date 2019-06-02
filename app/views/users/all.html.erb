@@ -1,0 +1,26 @@
+<header>
+  <nav>
+    <div class="navbar">
+      <h1 align="right">
+        <s>f</s>Acebook</h1>
+      <h3 align="right"><%= link_to "Timeline", posts_path%>&nbsp;/
+        <%= link_to "My Wall ", "/users/#{session[:current_user_id]}"%>/&nbsp;<%= link_to 'Users ', '/users/all'%>&nbsp;/&nbsp;<%= link_to "Profile", '/profile'%>&nbsp;/&nbsp;<%= link_to logout_path do %>
+        Logout
+        <% end %>
+      </h3>
+    </div>
+  </nav>
+</header>
+
+<h3 style="font-size: 25px; margin-top: 60px; margin-left: 25px;"><i><s>f</s>Acebook Users ⛅</i></h3><br>
+
+<% @users.each do |x|  %>
+<h3 style="color: rgba(255, 255, 255, 0.4); margin-left: 25px;">
+  <%= link_to x.name, "/users/#{x.name}" %>&nbsp;&nbsp;
+  <sub style="font-size: 14px;">member since <%= time_ago_in_words x.created_at %> ago</sub>
+  <br>
+  <hr style="margin-left: 0px; text-align:left; width: 20%; border: 0;
+    height: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);">
+</h3>
+<% end %>

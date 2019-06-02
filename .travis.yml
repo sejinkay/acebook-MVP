@@ -1,0 +1,15 @@
+RVM: "2.5.0"
+
+script:
+  - mkdir -p spec && bundle exec rspec spec
+
+before_install:
+  - gem update --system
+  - gem install bundler
+  - sudo apt-get update -qq
+  - sudo apt-get install -qq postgresql-server-dev-9.3
+
+before_script:
+  - psql -c 'create database pgapp_test;' -U postgres
+  - psql -d pgapp_test -c 'CREATE TABLE users (id serial PRIMARY KEY, email TEXT, name TEXT, password TEXT, created_at TIMESTAMP, updated_at TIMESTAMP);' -U postgres
+  - psql -d pgapp_test -c 'CREATE TABLE posts (id serial PRIMARY KEY, message TEXT, created_at TIMESTAMP, updated_at TIMESTAMP, users_id INTEGER REFERENCES users (id));' -U postgres

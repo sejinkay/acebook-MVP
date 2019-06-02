@@ -1,6 +1,23 @@
-<%= form_for @post do |form| %>
-  <%= form.label :message %>
-  <%= form.text_field :message %>
+<header>
+  <nav>
+    <div class="navbar">
+      <h1 align="right">
+        <s>f</s>Acebook</h1>
+      <h3 align="right"><%= link_to "Timeline", posts_path%>&nbsp;/
+        <%= link_to "My Wall", "/users/#{session[:current_user_id]}"%>/&nbsp;<%= link_to logout_path do %>
+        Logout
+        <% end %>
+      </h3>
+    </div>
+  </nav>
+</header>
 
-  <%= form.submit "Submit" %>
+
+<br><br>
+<%= form_for @post do |form| %>
+<h4>
+  <%= form.text_area :message, class: 'messagebox-style', :required => true, :placeholder => 'Write anything!', :size => 30 %>
+  <%= hidden_field_tag 'post[users_id]', session[:current_user_id] %>
+  <br><br>
+  <%= form.submit "Submit", class: 'button' %></h4>
 <% end %>

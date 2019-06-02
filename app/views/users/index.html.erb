@@ -1,0 +1,34 @@
+<header>
+  <nav>
+    <div class="navbar">
+      <h3 align="right">
+        <p>Account not created?</p>
+        <%= link_to new_user_path do %>
+        Sign Up
+        <% end %>
+      </h3>
+    </div>
+  </nav>
+</header>
+
+<center><br>
+  <h1><s>f</s>Acebook</h1>
+</center><br>
+
+<form action="/login" method="POST">
+  <div
+    style="background-color: rgba(255, 255, 255, 0.4); border-radius: 10px; padding: 10px; margin: 20px; width: 450px;">
+    <h3><br>&nbsp;&nbsp;&nbsp;&nbsp;
+      Log in<br><br>
+      <input type="email" class="textbox-style" name="login[email]" placeholder="Type your email"><br><br>
+      <input type="password" class="textbox-style" name="login[password]" placeholder="Type your password"><br><br>
+      <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+      <input type="submit" class="button" name="Login" value="Login">
+</form>
+</h3>
+</div>
+
+<%if flash[:login_error]%>
+<br>
+<h3><i><%= flash[:login_error]  =%></i></h3>
+<%end%>

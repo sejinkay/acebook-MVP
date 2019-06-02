@@ -1,0 +1,37 @@
+<header>
+  <nav>
+    <div class="navbar">
+      <h3 align="right">
+        <p>Already created an account?</p>
+        <%= link_to login_url do %>
+        Login
+        <% end %>
+      </h3>
+    </div>
+  </nav>
+</header>
+
+<center><br>
+  <h1>
+    <s>f</s>Acebook</h1>
+</center><br>
+
+<%= form_for(@user) do |form| %>
+<div
+  style="background-color: rgba(255, 255, 255, 0.4); border-radius: 10px; padding: 10px; margin: 20px; width: 450px;">
+  <h3>&nbsp;&nbsp;&nbsp;&nbsp; Create an Account &nbsp;</h3><br>
+  <%= form.text_field :name, class: 'textbox-style', :required => true, :placeholder => 'Type your username' %>
+  <br><br>
+  <%= form.text_field :email, class: 'textbox-style', :required => true, :placeholder => 'Type your email' %>
+  <br><br>
+  <%= form.password_field :password, class: 'textbox-style', :required => true, :placeholder => 'Type your password' %>
+  <br><br>
+  <%= form.submit "Submit", class: 'button' %><br>&nbsp;
+</div>
+<%= form.hidden_field :bg_colour, :value => "blue" %>
+<%= form.hidden_field :font, :value => "Inter" %>
+<% end %>
+
+<%if flash[:login_error]%>
+<p><%= flash[:login_error] =%></p>
+<%end%>

@@ -1,0 +1,87 @@
+<head>
+  <style>
+    body {
+      background-image: <%=@user.bg_colour %>;
+      /* background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: white; */
+    }
+
+    .usercustom {
+      font-family: <%=@user.font %>;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+
+<header>
+  <nav>
+    <div class="navbar">
+      <h1 align="right">
+        <s>f</s>Acebook</h1>
+      <h3 align="right"><%= link_to "Timeline", posts_path%>&nbsp;/
+        <%= link_to "My Wall ", "/users/#{session[:current_user_id]}"%>/&nbsp;<%= link_to 'Users ', '/users/all'%>&nbsp;/&nbsp;<%= link_to "Profile", '/profile'%>&nbsp;/&nbsp;<%= link_to logout_path do %>
+        Logout
+        <% end %>
+      </h3>
+    </div>
+  </nav>
+</header>
+
+<div class = "usercustom">
+  <h3 style="font-size: 25px; margin-top: 60px; margin-left: 25px;">
+    <% if session[:current_user_id] == @user.id %>
+    Welcome to your wall,
+    <%= @user.name %>
+    <% else %>
+    <%= @user.name %>'s Wall
+    <% end %>
+    🌿</h3>
+
+  <br>
+
+  <%= form_for :post do |form| %>
+  <h4>
+    <%= form.text_area :message, id: 'text', class: 'messagebox-style', :required => true, :placeholder => 'Write anything!', :size => 30 %>
+    <%= hidden_field_tag 'post[users_id]', session[:current_user_id] %>
+    <% params[:wall_id] = turn_name_to_id(params[:id]) %>
+
+    <%= hidden_field_tag 'post[wall_owner_id]', params[:wall_id] %>
+
+    <br><br>
+    <%= form.submit "Submit", class: 'button' %></h4>
+  <% end %>
+  <br><br><br><br><br><br><br><br><br>
+
+  <% @wall_posts.reverse.each do |post| %>
+  <div class="post">
+
+    <h4 align="right" style="padding: 5px;">Created
+      <%= time_ago_in_words post.created_at%>
+      ago by
+      <a href="/users/<%= User.find_by(id: post.users_id).name %>"><%= user = User.find_by(id: post.users_id).name %></a>
+      <% if post.created_at != post.updated_at %>
+      - Updated
+      <%= time_ago_in_words post.updated_at %>
+      ago
+      <% end %>
+
+      <p>
+        <% if post.users_id == session[:current_user_id] %>
+        <%= link_to "delete", post, method: :delete, data: { confirm: "You sure?" } %>&nbsp;&nbsp;
+        <%= link_to "edit", edit_post_path(post) %>
+        <% end %>
+    </h4>
+
+    <h2 style="padding: 5px;">
+      <div class="message">
+        <% if post.message.length < 30 %>
+        <h2 style="font-size: 70;">
+          <% end %><%= post.message %></div>
+    </h2>
+  </div><br>
+  <% end %>
+  <br />
+  <br />
+</div>

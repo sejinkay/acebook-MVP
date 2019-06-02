@@ -1,0 +1,30 @@
+<header>
+  <nav>
+    <div class="navbar">
+      <h1 align="right">
+        <s>f</s>Acebook</h1>
+      <h3 align="right"><%= link_to "Timeline", posts_path%>&nbsp;/
+        <%= link_to "My Wall ", "/users/#{session[:current_user_id]}"%>/&nbsp;<%= link_to 'Users ', '/users/all'%>&nbsp;/&nbsp;<%= link_to "Profile", '/profile'%>&nbsp;/&nbsp;<%= link_to logout_path do %>
+        Logout
+        <% end %>
+      </h3>
+    </div>
+  </nav>
+</header>
+
+<h3 style="font-size: 25px; margin-top: 60px; margin-left: 25px;">Customise your wall 🌿</h3>
+<br><br>
+
+<h3 style="margin-left: 25px;">Pick your background colour & typeface!</h3>
+<%= form_for :user do |form| %>
+<%= form.select :bg_colour, background_colour, :prompt => "Pick your colour"%>
+<%= form.select :font, ['Inter', 'Georgia', 'Arial Black', 'Papyrus', 'Comic Sans MS', 'Courier New', 'Times New Roman'], :prompt => "Pick your typeface"%>
+<input type="submit" class="button">
+<% end %>
+
+<%if flash[:success]%>
+<h4>&nbsp;&nbsp;<%= flash[:success] =%></h4>
+<%end%>
+<%if flash[:profile_error]%>
+<h4>&nbsp;&nbsp;<%= flash[:profile_error] =%></h4>
+<%end%>

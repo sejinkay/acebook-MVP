@@ -1,7 +1,54 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-<% end %>
+<header>
+  <nav>
+    <div class="navbar">
+      <h1 align="right">
+        <s>f</s>Acebook</h1>
+      <h3 align="right"><%= link_to "Timeline", posts_path%>&nbsp;/
+        <%= link_to "My Wall ", "/users/#{session[:current_user_id]}"%>/&nbsp;<%= link_to 'Users ', '/users/all'%>&nbsp;/&nbsp;<%= link_to "Profile", '/profile'%>&nbsp;/&nbsp;<%= link_to logout_path do %>
+        Logout
+        <% end %>
+      </h3>
+    </div>
+  </nav>
+</header>
 
-<%= link_to new_post_path do %>
-  New post
+<h3 style="font-size: 25px; margin-top: 60px; margin-left: 25px;">Welcome,
+  <%= @user.name %>
+  🌿</h3>
+<br>
+
+<% @posts.reverse.each do |post| %>
+<div class="post">
+
+  <h4 align="right" style="padding: 5px;  margin-bottom: 0px;">Created
+    <%= time_ago_in_words post.created_at%>
+    ago by
+    <a href="/users/<%= User.find_by(id: post.users_id).name %>"><%= user = User.find_by(id: post.users_id).name %></a>
+    <% if post.created_at != post.updated_at %>
+    - Updated
+    <%= time_ago_in_words post.updated_at %>
+    ago
+    <% end %>
+
+    <p>
+      <% if post.users_id == @user.id %>
+      <%= link_to "delete", post, method: :delete, data: { confirm: "You sure?" } %>&nbsp;&nbsp;
+      <%= link_to "edit", edit_post_path(post) %>
+      <% end %>
+      <% if post.users_id != @user.id %>
+      <br>
+      <% end %>
+  </h4>
+
+  <h2 style="padding: 5px;">
+    <div class="message">
+      <% if post.message.length < 30 %>
+      <h2 style="font-size: 70;">
+        <% end %><%= post.message %></div>
+  </h2>
+  <h4 align="right" style="padding: 5px; color: #FCFAFA; margin-bottom: 0px;"><i>from
+      <%= User.find_by(id: post.wall_owner_id).name %>'s wall</i></h4>
+</div><br>
 <% end %>
+<br />
+<br />

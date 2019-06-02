@@ -1,0 +1,20 @@
+<header>
+  <nav>
+    <div class="navbar">
+      <h1 align="right">
+        <s>f</s>Acebook</h1>
+      <h3 align="right"><%= link_to "Timeline", posts_path%>&nbsp;/
+        <%= link_to "My Wall ", "/users/#{session[:current_user_id]}"%>/&nbsp;<%= link_to 'Users ', '/users/all'%>&nbsp;/&nbsp;<%= link_to "Profile", '/profile'%>&nbsp;/&nbsp;<%= link_to logout_path do %>
+        Logout
+        <% end %>
+      </h3>
+    </div>
+  </nav>
+</header>
+
+<br><br>
+<%= form_for @post do |f| %>
+<h4><%= f.text_field :message, class: 'messagebox-style' %>
+  <br><br>
+  <%= f.submit "Save changes", class: 'button', data: { confirm: "Confirm changes" } %></h4>
+<% end %>

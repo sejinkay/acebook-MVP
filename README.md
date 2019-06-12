@@ -1,5 +1,10 @@
-# AceBook
+# AceBook Challenge
 
+Week 8,9 Challenge at [Makers Academy](https://makers.tech/)
+
+Original version collaboration repo available [Here](https://github.com/tsankhalpara/acebook-MVP)
+
+Checkout the deployed version [Here](https://acebook-heroku.herokuapp.com/)
 
 __Team Collaborators__
 
@@ -48,15 +53,15 @@ As a User
 So that I can see all my own posts and posts from other users
 I would like to have my own wall
 
-As a user 
+As a User
 So that I can view other users walls
-I would like to ba able to search them by /username
+I would like to be able to search them by /username
 
-As a user
+As a User
 So that I can post on another users wall
 I would like a posts form
 
-As a user
+As a User
 So that I know a user exists
 I would like a 404 error if their wall doesn't exist
 
@@ -71,15 +76,6 @@ so that i can delete my own posts
 As a User
 I can click an update button
 so that i can update my own existing posts
-
-Additional user stories:
-As a User
-I would like to see a pop up message
-so that i know my post has been removed
-
-As a User
-I would like to see a pop up message
-so that i know my post has been updated
 ```
 <img src="./project-img/diagram01.jpg">
 
